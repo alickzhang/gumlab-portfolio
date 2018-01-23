@@ -1,16 +1,16 @@
 module.exports = {
-  projectDir: "projects", // The name of directory that contains your posts.
+  projectDir: "projects", // The name of directory that contains your projects.
   siteTitle: "Wen Shi's Portfolio", // Site title.
   siteTitleAlt: "Digital Agency Portfolio", // Alternative site title for SEO.
   siteLogo: "/logos/logo-1024.png", // Logo used for SEO and manifest.
-  siteUrl: "https://nfang.github.io/portfolio/", // Domain of your website without pathPrefix.
-  pathPrefix: "/", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
+  siteUrl: "https://nfang.github.io", // Domain of your website without pathPrefix.
+  pathPrefix: "/portfolio", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   siteDescription: "Portfolio website for Wen Shi", // Website description used for RSS feeds/meta description tag.
   siteRss: "/rss.xml", // Path to the RSS file.
   siteFBAppID: "", // FB Application ID for using app insights
   googleAnalyticsID: "", // GA tracking ID.
   disqusShortname: "", // Disqus shortname.
-  postDefaultCategoryID: "Tech", // Default category for posts.
+  projectDefaultCategoryID: "Tech", // Default category for projects.
   userName: "Wen Shi", // Username to display in the author segment.
   userTwitter: "WEN__SHI", // Optionally renders "Follow Me" in the UserInfo segment.
   userLocation: "Melbourne, Australia", // User location to display in the author segment.

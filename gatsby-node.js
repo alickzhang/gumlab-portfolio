@@ -34,7 +34,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
 
   return new Promise((resolve, reject) => {
-    const postPage = path.resolve("src/templates/post.jsx");
+    const projectPage = path.resolve("src/templates/project.jsx");
     const tagPage = path.resolve("src/templates/tag.jsx");
     const categoryPage = path.resolve("src/templates/category.jsx");
     resolve(
@@ -77,8 +77,8 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           }
 
           createPage({
-            path: edge.node.fields.slug,
-            component: postPage,
+            path: `/projects${edge.node.fields.slug}`,
+            component: projectPage,
             context: {
               slug: edge.node.fields.slug
             }

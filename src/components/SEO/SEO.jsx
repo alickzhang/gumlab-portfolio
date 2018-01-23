@@ -4,19 +4,19 @@ import config from "../../../data/SiteConfig";
 
 class SEO extends Component {
   render() {
-    const { postNode, postPath, postSEO } = this.props;
+    const { projectNode, projectPath, projectSEO } = this.props;
     let title;
     let description;
     let image;
-    let postURL;
-    if (postSEO) {
-      const postMeta = postNode.frontmatter;
-      title = postMeta.title;
-      description = postMeta.description
-        ? postMeta.description
-        : postNode.excerpt;
-      image = postMeta.cover;
-      postURL = config.siteUrl + config.pathPrefix + postPath;
+    let projectURL;
+    if (projectSEO) {
+      const projectMeta = projectNode.frontmatter;
+      title = projectMeta.title;
+      description = projectMeta.description
+        ? projectMeta.description
+        : projectNode.excerpt;
+      image = projectMeta.cover;
+      projectURL = config.siteUrl + config.pathPrefix + projectPath;
     } else {
       title = config.siteTitle;
       description = config.siteDescription;
@@ -24,17 +24,17 @@ class SEO extends Component {
     }
     const realPrefix = config.pathPrefix === "/" ? "" : config.pathPrefix;
     image = config.siteUrl + realPrefix + image;
-    const blogURL = config.siteUrl + config.pathPrefix;
+    const portfolioURL = config.siteUrl + config.pathPrefix;
     const schemaOrgJSONLD = [
       {
         "@context": "http://schema.org",
         "@type": "WebSite",
-        url: blogURL,
+        url: portfolioURL,
         name: title,
         alternateName: config.siteTitleAlt ? config.siteTitleAlt : ""
       }
     ];
-    if (postSEO) {
+    if (projectSEO) {
       schemaOrgJSONLD.push([
         {
           "@context": "http://schema.org",
@@ -44,7 +44,7 @@ class SEO extends Component {
               "@type": "ListItem",
               position: 1,
               item: {
-                "@id": postURL,
+                "@id": projectURL,
                 name: title,
                 image
               }
@@ -53,15 +53,12 @@ class SEO extends Component {
         },
         {
           "@context": "http://schema.org",
-          "@type": "BlogPosting",
-          url: blogURL,
+          "@type": "CreativeWork",
+          url: portfolioURL,
           name: title,
           alternateName: config.siteTitleAlt ? config.siteTitleAlt : "",
           headline: title,
-          image: {
-            "@type": "ImageObject",
-            url: image
-          },
+          thumbnailUrl: image,
           description
         }
       ]);
@@ -78,8 +75,8 @@ class SEO extends Component {
         </script>
 
         {/* OpenGraph tags */}
-        <meta property="og:url" content={postSEO ? postURL : blogURL} />
-        {postSEO ? <meta property="og:type" content="article" /> : null}
+        <meta property="og:url" content={projectSEO ? projectURL : portfolioURL} />
+        {projectSEO ? <meta property="og:type" content="article" /> : null}
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={image} />
