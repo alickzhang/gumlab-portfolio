@@ -1,11 +1,11 @@
 module.exports = {
   projectDir: "projects", // The name of directory that contains your projects.
-  siteTitle: "Wen Shi's Portfolio", // Site title.
-  siteTitleAlt: "Digital Agency Portfolio", // Alternative site title for SEO.
+  siteTitle: "Gumlab Portfolio", // Site title.
+  siteTitleAlt: "Gumlab Digital Agency Portfolio", // Alternative site title for SEO.
   siteLogo: "/logos/logo-1024.png", // Logo used for SEO and manifest.
   siteUrl: "https://nfang.github.io", // Domain of your website without pathPrefix.
   pathPrefix: "/portfolio", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
-  siteDescription: "Portfolio website for Wen Shi", // Website description used for RSS feeds/meta description tag.
+  siteDescription: "Portfolio website for Gumlab", // Website description used for RSS feeds/meta description tag.
   siteRss: "/rss.xml", // Path to the RSS file.
   siteFBAppID: "", // FB Application ID for using app insights
   googleAnalyticsID: "", // GA tracking ID.
@@ -24,7 +24,7 @@ module.exports = {
       iconClassName: "fa fa-twitter"
     }
   ],
-  copyright: "Copyright © 2018. Wen Shi", // Copyright string for the footer of the website and RSS feed.
+  copyright: "Copyright © 2018. Gumlab", // Copyright string for the footer of the website and RSS feed.
   themeColor: "#c62828", // Used for setting manifest and progress theme colors.
   backgroundColor: "#e0e0e0" // Used for setting manifest background color.
 };
