@@ -1,16 +1,24 @@
-import React from "react";
+import React, { Component } from "react";
 import Helmet from "react-helmet";
+import "font-awesome/css/font-awesome.min.css";
+
 import ProjectListing from "../components/ProjectListing/ProjectListing";
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 
-class Index extends React.Component {
+import './index.css';
+
+class Index extends Component {
   render() {
     const projectEdges = this.props.data.allMarkdownRemark.edges;
+    const imgUrl = "http://images.contentful.com/uftyz5b3faoy/1mOIOmBwNa2o4iQukgmgoA/75202a71efece6a6762fc2b4439fe95b/BaillatSite_HeroImage_Template2.jpg";
     return (
       <div className="index-container">
         <Helmet title={config.siteTitle} />
         <SEO projectEdges={projectEdges} />
+        <div className="intro">
+          <div className="cover" style={{ backgroundImage: `url(${imgUrl}` }} />
+        </div>
         <ProjectListing projectEdges={projectEdges} />
       </div>
     );
@@ -19,7 +27,7 @@ class Index extends React.Component {
 
 export default Index;
 
-/* eslint no-undef: "off"*/
+/* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query IndexQuery {
     allMarkdownRemark(

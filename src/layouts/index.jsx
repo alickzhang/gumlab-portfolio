@@ -1,9 +1,19 @@
 import React from "react";
 import Helmet from "react-helmet";
 import config from "../../data/SiteConfig";
+import Header from "../components/Header/Header";
+import Sidebar from "../components/Sidebar";
 import "./index.css";
 
 export default class MainLayout extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {
+      sidebarOpen: false,
+    };
+  }
+
   getLocalTitle() {
     function capitalize(string) {
       return string.charAt(0).toUpperCase() + string.slice(1);
@@ -36,14 +46,26 @@ export default class MainLayout extends React.Component {
     }
     return title;
   }
+
+  onSidebarOpen = () => {
+    this.setState({ sidebarOpen: true });
+  }
+
+  onSidebarClose = () => {
+    this.setState({ sidebarOpen: false });
+  }
+
   render() {
     const { children } = this.props;
+    const { sidebarOpen } = this.state;
     return (
       <div>
         <Helmet>
           <title>{`${config.siteTitle} |  ${this.getLocalTitle()}`}</title>
           <meta name="description" content={config.siteDescription} />
         </Helmet>
+        <Header onSidebarOpen={this.onSidebarOpen} />
+        <Sidebar open={sidebarOpen} onSidebarClose={this.onSidebarClose} />
         {children()}
       </div>
     );
