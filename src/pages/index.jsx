@@ -9,6 +9,12 @@ import config from "../../data/SiteConfig";
 import './index.css';
 
 class Index extends Component {
+
+  scrollDown = () => {
+    const element = document.getElementById("start");
+    element.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
   render() {
     const projectEdges = this.props.data.allMarkdownRemark.edges;
     const imgUrl = "http://images.contentful.com/uftyz5b3faoy/1mOIOmBwNa2o4iQukgmgoA/75202a71efece6a6762fc2b4439fe95b/BaillatSite_HeroImage_Template2.jpg";
@@ -18,7 +24,9 @@ class Index extends Component {
         <SEO projectEdges={projectEdges} />
         <div className="intro">
           <div className="cover" style={{ backgroundImage: `url(${imgUrl}` }} />
+          <div className="down" onClick={this.scrollDown}><i className="fa fa-chevron-down" /></div>
         </div>
+        <div id="start" />
         <ProjectListing projectEdges={projectEdges} />
       </div>
     );

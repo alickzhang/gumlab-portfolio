@@ -35,7 +35,7 @@ export default class ProjectTemplate extends React.Component {
         <SEO projectPath={slug} projectNode={projectNode} projectSEO />
         <div>
           <div className="intro">
-            <div className="cover project-cover" style={{ backgroundImage: `url(${project.cover}` }} />
+            <div className="cover fadein project-cover" style={{ backgroundImage: `url(${project.cover}` }} />
             <div className="project-title">{project.title}</div>
             <div className="down" onClick={this.scrollDown}><i className="fa fa-chevron-down" /></div>
           </div>

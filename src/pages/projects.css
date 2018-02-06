@@ -1,0 +1,7 @@
+.projects-layout {
+  display: flex;
+}
+
+.project-item {
+  width: 25%;
+}
