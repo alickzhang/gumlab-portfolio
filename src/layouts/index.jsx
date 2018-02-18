@@ -2,6 +2,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import config from "../../data/SiteConfig";
 import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
 import Sidebar from "../components/Sidebar";
 import "./index.css";
 
@@ -67,6 +68,7 @@ export default class MainLayout extends React.Component {
         <Header onSidebarOpen={this.onSidebarOpen} />
         <Sidebar open={sidebarOpen} onSidebarClose={this.onSidebarClose} />
         {children()}
+        <Footer config={config} />
       </div>
     );
   }
