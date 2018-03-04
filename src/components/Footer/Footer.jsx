@@ -25,7 +25,7 @@ class Footer extends Component {
             </address>
           </section>
           <section>
-            <h4>SERVICE</h4>
+            <h4>SERVICES</h4>
             <ul>
               <li>Animation</li>
               <li>Motion Graphic</li>

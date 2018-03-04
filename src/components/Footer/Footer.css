@@ -1,8 +1,17 @@
 .footer {
   background: #e0e0e0;
-  font-size: 14px;
+  color: rgba(0, 0, 0, .75);
+  font-family: "Biko", "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 1.8rem;
   line-height: 1.65;
   padding: 48px 10% 32px;
+}
+
+.footer .columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: top;
 }
 
 .footer .columns li > a {
@@ -18,17 +27,16 @@
 
 .footer address strong {
   display: block;
-  line-height: 3;
+  line-height: 3.3;
 }
 
-.columns {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: top;
+.footer address {
+  font-style: normal;
+  line-height: 1.5;
+  margin-bottom: 8px;
 }
 
 .copyright {
-  font-size: 12px;
+  font-size: 1rem;
   padding: 32px 0 0;
 }
