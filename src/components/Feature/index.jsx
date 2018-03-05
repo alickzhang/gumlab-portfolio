@@ -13,18 +13,12 @@ export default class Feature extends Component {
   }
 
   state = {
-    interval: null,
     defaultSpeed: 1,
     speed: 1,
   }
 
   componentDidMount() {
-    const interval = setInterval(this.scroll, 10);
-    this.setState({ interval });
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.state.interval);
+    window.requestAnimationFrame(this.scroll);
   }
 
   scroll = () => {
@@ -42,13 +36,14 @@ export default class Feature extends Component {
         this.feature.scrollLeft += speed;
       }
     }
+    window.requestAnimationFrame(this.scroll);
   }
 
   hover = (e) => {
     e.stopPropagation();
     const halfWidth = window.innerWidth / 2;
     const offsetX = e.clientX - halfWidth;
-    const speed = 4 * offsetX / halfWidth;
+    const speed = 10 * offsetX / halfWidth;
     this.setState({ speed });
   }
 
