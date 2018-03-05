@@ -13,12 +13,19 @@ export default class Feature extends Component {
   }
 
   state = {
+    animationRequest: null,
     defaultSpeed: 1,
     speed: 1,
   }
 
   componentDidMount() {
-    window.requestAnimationFrame(this.scroll);
+    this.setState({
+      animationRequest: window.requestAnimationFrame(this.scroll),
+    });
+  }
+
+  componentWillUnmount() {
+    window.cancelAnimationFrame(this.state.animationRequest);
   }
 
   scroll = () => {
@@ -36,7 +43,9 @@ export default class Feature extends Component {
         this.feature.scrollLeft += speed;
       }
     }
-    window.requestAnimationFrame(this.scroll);
+    this.setState({
+      animationRequest: window.requestAnimationFrame(this.scroll),
+    });
   }
 
   hover = (e) => {
