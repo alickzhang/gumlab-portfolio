@@ -39,13 +39,17 @@ class Footer extends Component {
             <h4>FOLLOW</h4>
             <ul>
               <li>
-                <a href="#" target="_blank">Facebook</a></li>
+                <a href="https://www.behance.net/gumlab" target="_blank" rel="noopener noreferrer">Behance</a>
+              </li>
               <li>
-                <a href="#" target="_blank">Behance</a></li>
+                <a href="https://www.instagram.com/gumlab" target="_blank" rel="noopener noreferrer">Instagram</a>
+              </li>
               <li>
-                <a href="#" target="_blank">Vimeo</a></li>
+                <a href="https://vimeo.com/gumlab" target="_blank" rel="noopener noreferrer">Vimeo</a>
+              </li>
               <li>
-                <a href="#" target="_blank">Instagram</a></li>
+                <a href="http://www.xinpianchang.com/gumlab" target="_blank" rel="noopener noreferrer">Xinpianchang</a>
+              </li>
             </ul>
           </section>
         </div>
