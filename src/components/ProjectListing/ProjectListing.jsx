@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "gatsby-link";
 
+import Feature from "../Feature";
+
 class ProjectListing extends React.Component {
   getProjectList() {
     const projectList = [];
@@ -22,9 +24,7 @@ class ProjectListing extends React.Component {
     return (
       <div>
         {projectList.map(project => (
-          <Link to={project.path} key={project.title}>
-            <h1>{project.title}</h1>
-          </Link>
+          <Feature key={project.title} title={project.title} pictures={[project.cover]} path={project.path} />
         ))}
       </div>
     );

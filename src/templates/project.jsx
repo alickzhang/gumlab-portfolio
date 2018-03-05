@@ -5,6 +5,7 @@ import UserInfo from "../components/UserInfo/UserInfo";
 import ProjectTags from "../components/ProjectTags/ProjectTags";
 import SocialLinks from "../components/SocialLinks/SocialLinks";
 import SEO from "../components/SEO/SEO";
+import Cover from "../components/Cover";
 import config from "../../data/SiteConfig";
 
 import "./b16-tomorrow-dark.css";
@@ -33,13 +34,8 @@ export default class ProjectTemplate extends React.Component {
           <title>{`${project.title} | ${config.siteTitle}`}</title>
         </Helmet>
         <SEO projectPath={slug} projectNode={projectNode} projectSEO />
-        <div>
-          <div className="intro">
-            <div className="cover fadein project-cover" style={{ backgroundImage: `url(${project.cover}` }} />
-            <div className="project-title">{project.title}</div>
-            <div className="down" onClick={this.scrollDown}><i className="fa fa-chevron-down" /></div>
-          </div>
-          <div id="start" />
+        <Cover coverImg={project.cover} fadein fixed title={project.title} />
+        <div className="project-container">
           <div dangerouslySetInnerHTML={{ __html: projectNode.html }} />
           <div className="project-meta">
             <ProjectTags tags={project.tags} />

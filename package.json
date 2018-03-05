@@ -8,6 +8,7 @@
   ],
   "dependencies": {
     "babel-plugin-lodash": "^3.3.2",
+    "classnames": "^2.2.5",
     "font-awesome": "^4.7.0",
     "gatsby": "^1.9.149",
     "gatsby-link": "^1.6.32",
@@ -31,9 +32,9 @@
     "lodash": "^4.17.4",
     "lodash-webpack-plugin": "^0.11.4",
     "prop-types": "^15.6.0",
-    "react": "^15.6.1",
+    "react": "^16.2.0",
     "react-disqus-comments": "^1.1.1",
-    "react-dom": "^15.6.1",
+    "react-dom": "^16.2.0",
     "react-helmet": "^5.2.0",
     "react-share": "^1.19.0",
     "react-twitter-widgets": "^1.7.1"

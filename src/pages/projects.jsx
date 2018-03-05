@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Helmet from "react-helmet";
+
+import Cover from "../components/Cover";
 import config from "../../data/SiteConfig";
 
 import './projects.css';
@@ -34,16 +36,12 @@ export default class Projects extends Component {
     return (
       <div className="projects-container">
         <Helmet title={`Projects | ${config.siteTitle}`} />
-        <div className="intro">
-          <div className="cover fadein" style={{ backgroundImage: `url(${imgUrl}` }} />
-          <div className="down" onClick={this.scrollDown}><i className="fa fa-chevron-down" /></div>
-        </div>
-        <div id="start" />
+        <Cover coverImg={imgUrl} fadein />
         <div>
           <div className="projects-layout">
             {projectList.map(edge => (
               <div className="project-item">
-                <div className="cover" style={{ backgroundImage: `url(${edge.cover}`, backgroundSize: 'contain' }}>
+                <div className="cover-img" style={{ backgroundImage: `url(${edge.cover}`, backgroundSize: 'contain' }}>
                   <img src={edge.cover} alt="cover" style={{ visibility: 'hidden' }} />
                 </div>
               </div>

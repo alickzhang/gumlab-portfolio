@@ -21,8 +21,14 @@ export default class Header extends Component {
     const { isTop } = this.state;
     return (
       <div className="header">
-        <div className={isTop ? "bars" : "bars dark"} onClick={this.props.onSidebarOpen}><i className="fa fa-bars" /></div>
-        <div className="logo"><Link to="/">Logo</Link></div>
+        <h1 className="header-brand"><Link to="/">Gumlab</Link></h1>
+        <nav className="header-links">
+          <Link to="/projects">Projects</Link>
+          <Link to="/">Studios</Link>
+          <Link to="/about">Infos</Link>
+          <a>cn</a>
+        </nav>
+        {false && <div className={isTop ? "bars" : "bars dark"} onClick={this.props.onSidebarOpen}><i className="fa fa-bars" /></div>}
       </div>
     );
   }

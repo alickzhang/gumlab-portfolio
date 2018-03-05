@@ -4,6 +4,7 @@ import "font-awesome/css/font-awesome.min.css";
 
 import ProjectListing from "../components/ProjectListing/ProjectListing";
 import SEO from "../components/SEO/SEO";
+import Cover from "../components/Cover";
 import config from "../../data/SiteConfig";
 
 import './index.css';
@@ -22,11 +23,7 @@ class Index extends Component {
       <div className="index-container">
         <Helmet title={config.siteTitle} />
         <SEO projectEdges={projectEdges} />
-        <div className="intro">
-          <div className="cover" style={{ backgroundImage: `url(${imgUrl}` }} />
-          <div className="down" onClick={this.scrollDown}><i className="fa fa-chevron-down" /></div>
-        </div>
-        <div id="start" />
+        <Cover coverImg={imgUrl} />
         <ProjectListing projectEdges={projectEdges} />
       </div>
     );
