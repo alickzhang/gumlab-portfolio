@@ -1,8 +1,8 @@
-import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component, Fragment } from "react";
+import PropTypes from "prop-types";
 import Link from "gatsby-link";
 
-import './index.css';
+import "./Feature.css";
 
 export default class Feature extends Component {
 
@@ -50,9 +50,8 @@ export default class Feature extends Component {
 
   hover = (e) => {
     e.stopPropagation();
-    const halfWidth = window.innerWidth / 2;
-    const offsetX = e.clientX - halfWidth;
-    const speed = 10 * offsetX / halfWidth;
+    const offsetX = e.clientX - window.innerWidth / 2;
+    const speed = 20 * offsetX / window.screenX;
     this.setState({ speed });
   }
 

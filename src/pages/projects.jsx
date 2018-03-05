@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import Helmet from "react-helmet";
 
-import Cover from "../components/Cover";
+import Cover from "../components/Cover/Cover";
 import config from "../../data/SiteConfig";
 
-import './projects.css';
+import "./projects.css";
 
 export default class Projects extends Component {
 

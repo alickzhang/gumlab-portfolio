@@ -5,7 +5,7 @@ import UserInfo from "../components/UserInfo/UserInfo";
 import ProjectTags from "../components/ProjectTags/ProjectTags";
 import SocialLinks from "../components/SocialLinks/SocialLinks";
 import SEO from "../components/SEO/SEO";
-import Cover from "../components/Cover";
+import Cover from "../components/Cover/Cover";
 import config from "../../data/SiteConfig";
 
 import "./b16-tomorrow-dark.css";

@@ -1,8 +1,8 @@
-import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import React, { Component, Fragment } from "react";
+import PropTypes from "prop-types";
+import classNames from "classnames";
 
-import './index.css';
+import "./Cover.css";
 
 export default class Cover extends Component {
 

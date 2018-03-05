@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import Link from 'gatsby-link';
-import './Header.css';
+import React, { Component } from "react";
+import Link from "gatsby-link";
+
+import "./Header.css";
 
 export default class Header extends Component {
 

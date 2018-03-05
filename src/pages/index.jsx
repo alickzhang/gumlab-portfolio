@@ -4,10 +4,10 @@ import "font-awesome/css/font-awesome.min.css";
 
 import ProjectListing from "../components/ProjectListing/ProjectListing";
 import SEO from "../components/SEO/SEO";
-import Cover from "../components/Cover";
+import Cover from "../components/Cover/Cover";
 import config from "../../data/SiteConfig";
 
-import './index.css';
+import "./index.css";
 
 class Index extends Component {
 

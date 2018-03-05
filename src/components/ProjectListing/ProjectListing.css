@@ -1,0 +1,25 @@
+.view-all-text {
+  margin: 2rem 0;
+  color: rgb(0, 0, 0);
+  line-height: 1.5;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.view-all-text a {
+  padding: 1rem 2rem;
+  font-size: 6vw;
+  border-bottom: 1px solid #979797;
+}
+
+@media (min-width: 768px) {
+  .view-all-text a {
+    font-size: 3.5vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  .view-all-text a {
+    font-size: 72px;
+  }
+}

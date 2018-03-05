@@ -1,9 +1,12 @@
-import React from "react";
+import React, { Component } from "react";
 import Link from "gatsby-link";
 
-import Feature from "../Feature";
+import Feature from "../Feature/Feature";
 
-class ProjectListing extends React.Component {
+import "./ProjectListing.css";
+
+class ProjectListing extends Component {
+
   getProjectList() {
     const projectList = [];
     this.props.projectEdges.forEach(projectEdge => {
@@ -19,13 +22,17 @@ class ProjectListing extends React.Component {
     });
     return projectList;
   }
+
   render() {
     const projectList = this.getProjectList();
     return (
-      <div>
-        {projectList.map(project => (
-          <Feature key={project.title} title={project.title} pictures={[project.cover]} path={project.path} />
-        ))}
+      <div className="project-list">
+        <div className="featured">
+          {projectList.map(project => (
+            <Feature key={project.title} title={project.title} pictures={[project.cover]} path={project.path} />
+          ))}
+        </div>
+        <div className="view-all-text"><Link to="/projects">View All Projects</Link></div>
       </div>
     );
   }
