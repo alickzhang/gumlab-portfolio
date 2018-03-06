@@ -9,16 +9,18 @@ class ProjectListing extends Component {
 
   getProjectList() {
     const projectList = [];
-    this.props.projectEdges.forEach(projectEdge => {
-      projectList.push({
-        path: `projects${projectEdge.node.fields.slug}`,
-        tags: projectEdge.node.frontmatter.tags,
-        cover: projectEdge.node.frontmatter.cover,
-        title: projectEdge.node.frontmatter.title,
-        date: projectEdge.node.frontmatter.date,
-        excerpt: projectEdge.node.excerpt,
-        timeToRead: projectEdge.node.timeToRead
-      });
+    this.props.projectEdges.forEach(({ node }) => {
+      if (node.frontmatter.featured) {
+        projectList.push({
+          path: `projects${node.fields.slug}`,
+          tags: node.frontmatter.tags,
+          cover: node.frontmatter.cover,
+          title: node.frontmatter.title,
+          date: node.frontmatter.date,
+          excerpt: node.excerpt,
+          timeToRead: node.timeToRead
+        });
+      }
     });
     return projectList;
   }
