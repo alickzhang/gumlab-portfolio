@@ -12,7 +12,7 @@ class Footer extends Component {
             <ul>
               <li><a href="mailto:info@gum-lab.com">info@gum-lab.com</a></li>
               <li><a href="tel:+61450507086">+61 4 5050 7086 (Australia)</a></li>
-              <li><a href="tel:+8613918614393">+86 13918614393 (China)</a></li>
+              <li><a href="tel:+8613918614393">+86 139 1861 4393 (China)</a></li>
             </ul>
             <address>
               <strong>GUMLAB</strong>

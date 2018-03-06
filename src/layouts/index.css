@@ -1,21 +1,43 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 @font-face {
-  font-family: "Biko";
-  src: url("../shared/fonts/Biko_Regular.woff") format("woff");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "Biko";
-  src: url("../shared/fonts/Biko_Light-Restricted.woff") format("woff");
+  font-family: National;
+  src: url("../shared/fonts/National-Light.eot");
+  src: url("../shared/fonts/National-Light.eot?#iefix") format("embedded-opentype"), url("../shared/fonts/National-Light.woff2") format("woff2"), url("../shared/fonts/National-Light.woff") format("woff"), url("../shared/fonts/National-Light.ttf") format("truetype");
   font-weight: 300;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: "Biko";
-  src: url("../shared/fonts/Biko_Bold.woff") format("woff");
+  font-family: National;
+  src: url("../shared/fonts/National-LightItalic.eot");
+  src: url("../shared/fonts/National-LightItalic.eot?#iefix") format("embedded-opentype"), url("../shared/fonts/National-LightItalic.woff2") format("woff2"), url("../shared/fonts/National-LightItalic.woff") format("woff"), url("../shared/fonts/National-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: National;
+  src: url("../shared/fonts/National-Regular.eot");
+  src: url("../shared/fonts/National-Regular.eot?#iefix") format("embedded-opentype"), url("../shared/fonts/National-Regular.woff2") format("woff2"), url("../shared/fonts/National-Regular.woff") format("woff"), url("../shared/fonts/National-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: National;
+  src: url("../shared/fonts/National-Semibold.eot");
+  src: url("../shared/fonts/National-Semibold.eot?#iefix") format("embedded-opentype"), url("../shared/fonts/National-Semibold.woff2") format("woff2"), url("../shared/fonts/National-Semibold.woff") format("woff"), url("../shared/fonts/National-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: National;
+  src: url("../shared/fonts/National-Bold.eot");
+  src: url("../shared/fonts/National-Bold.eot?#iefix") format("embedded-opentype"), url("../shared/fonts/National-Bold.woff2") format("woff2"), url("../shared/fonts/National-Bold.woff") format("woff"), url("../shared/fonts/National-Bold.ttf") format("truetype");
   font-weight: 700;
+  font-style: normal;
 }
 
 * {
@@ -27,7 +49,7 @@
 
 html {
   height: 100%;
-  font-family: "Biko", "Roboto", Arial, Helvetica, sans-serif;
+  font-family: "National", "Roboto", Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -40,7 +62,8 @@ a {
   text-decoration: none;
 }
 
-ul, figure {
+ul,
+figure {
   margin: 0;
   padding: 0;
   list-style-type: none;
