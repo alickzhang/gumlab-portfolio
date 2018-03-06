@@ -51,7 +51,7 @@ export default class Feature extends Component {
   hover = (e) => {
     e.stopPropagation();
     const offsetX = e.clientX - window.innerWidth / 2;
-    const speed = 20 * offsetX / window.screenX;
+    const speed = 20 * offsetX / window.screen.width;
     this.setState({ speed });
   }
 
