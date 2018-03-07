@@ -12,15 +12,14 @@
 .project-section {
   margin: 0;
   padding: 0.5rem 0;
-  font-size: 1.5rem;
   opacity: 0;
   transform: translateY(4vh);
-  transition: all .8s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
 .project-section img {
   transform: scale(1.03);
-  transition: transform .8s ease-in-out;
+  transition: transform .2s ease-in-out;
 }
 
 .project-section.visible {
@@ -52,13 +51,11 @@
 
   .project-section {
     padding: 1rem 0;
-    font-size: 2rem;
   }
 }
 
 @media (min-width: 1200px) {
   .project-section {
     padding: 1.5rem 0;
-    font-size: 2.5rem;
   }
 }

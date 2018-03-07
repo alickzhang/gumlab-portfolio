@@ -36,7 +36,7 @@ export default class ProjectTemplate extends React.Component {
       if (!el.classList) {
         return;
       }
-      if (el.offsetTop < window.innerHeight + window.scrollY - 200) {
+      if (el.offsetTop < window.innerHeight + window.scrollY - 150) {
         el.classList.add('visible');
       } else {
         el.classList.remove('visible');
