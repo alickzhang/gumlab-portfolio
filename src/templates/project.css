@@ -9,16 +9,25 @@
   margin: 20px 0;
 }
 
+.project-container .gatsby-resp-image-wrapper {
+  padding: 1.25rem 0;
+}
+
 .project-meta {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 2rem 0 4rem;
+}
+
+.project-container .language-no-highlight {
+  background-color: #e0e0e0;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
   .project-container {
     width: 80%;
     padding: 0;
-    /*padding: 0 2rem;*/
   }
 }

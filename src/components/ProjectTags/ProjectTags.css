@@ -1,0 +1,15 @@
+.project-tag {
+  color: rgba(0, 0, 0, .65);
+  font-size: 1rem;
+  margin-right: 1rem;
+  transition: color linear 150ms;
+}
+
+.project-tag:hover {
+  color: rgba(0, 0, 0, 1);
+}
+
+.project-tag:before {
+  content: '#';
+  margin-right: 1px;
+}

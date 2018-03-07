@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import _ from "lodash";
 import Link from "gatsby-link";
 
+import "./ProjectTags.css";
+
 class ProjectTags extends Component {
   render() {
     const { tags } = this.props;
@@ -14,7 +16,7 @@ class ProjectTags extends Component {
               style={{ textDecoration: "none" }}
               to={`/tags/${_.kebabCase(tag)}`}
             >
-              <button>{tag}</button>
+              <span className="project-tag">{tag}</span>
             </Link>
           ))}
       </div>

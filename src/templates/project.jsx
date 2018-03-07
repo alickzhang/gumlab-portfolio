@@ -39,9 +39,8 @@ export default class ProjectTemplate extends React.Component {
           <div dangerouslySetInnerHTML={{ __html: projectNode.html }} />
           <div className="project-meta">
             <ProjectTags tags={project.tags} />
-            <SocialLinks projectPath={slug} projectNode={projectNode} />
+            {/* <SocialLinks projectPath={slug} projectNode={projectNode} /> */}
           </div>
-          <UserInfo config={config} />
         </div>
       </div>
     );
