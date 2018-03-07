@@ -13,6 +13,37 @@ import "./project.css";
 
 export default class ProjectTemplate extends React.Component {
 
+  state = {
+    elements: null
+  }
+
+  componentDidMount() {
+    document.addEventListener('scroll', this.onScroll);
+    const elements = document.getElementsByClassName('project-content')[0].childNodes;
+    elements.forEach(el => {
+      el.className="project-section";
+    });
+    this.setState({ elements });
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('scroll', this.onScroll);
+  }
+
+  onScroll = () => {
+    const { elements } = this.state;
+    elements.forEach(el => {
+      if (!el.classList) {
+        return;
+      }
+      if (el.offsetTop < window.innerHeight + window.scrollY - 200) {
+        el.classList.add('visible');
+      } else {
+        el.classList.remove('visible');
+      }
+    });
+  }
+
   scrollDown = () => {
     const element = document.getElementById("start");
     element.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -36,7 +67,7 @@ export default class ProjectTemplate extends React.Component {
         <SEO projectPath={slug} projectNode={projectNode} projectSEO />
         <Cover coverImg={project.cover} fadein fixed title={project.title} />
         <div className="project-container">
-          <div dangerouslySetInnerHTML={{ __html: projectNode.html }} />
+          <div className="project-content" dangerouslySetInnerHTML={{ __html: projectNode.html }} />
           <div className="project-meta">
             <ProjectTags tags={project.tags} />
             {/* <SocialLinks projectPath={slug} projectNode={projectNode} /> */}

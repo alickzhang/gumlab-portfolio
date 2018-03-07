@@ -28,12 +28,12 @@ tags:
 
 **Full Credits:**
 
-- Client: Yoho! 
+- Client: Yoho!
 - Product: Yohood Street Fashion Festival
-- Agency: Studio Gumwap 
+- Agency: Studio Gumwap
 - Production: GUMLAB
-- Creative Director: Anxing 
-- Animation/VFX Supervisor: Wen Shi 
+- Creative Director: Anxing
+- Animation/VFX Supervisor: Wen Shi
 - Producer: Yif
 - 3D Animation: Lindsay Horner
 - VFX/Animation: GUMLAB

@@ -4,13 +4,32 @@
   margin: 0 auto;
 }
 
-.project-container img {
-  width: 100%;
-  margin: 20px 0;
-}
-
 .project-container .gatsby-resp-image-wrapper {
   padding: 1.25rem 0;
+  overflow: hidden;
+}
+
+.project-section {
+  margin: 0;
+  padding: 0.5rem 0;
+  font-size: 1.5rem;
+  opacity: 0;
+  transform: translateY(4vh);
+  transition: all .8s ease-in-out;
+}
+
+.project-section img {
+  transform: scale(1.03);
+  transition: transform .8s ease-in-out;
+}
+
+.project-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-section.visible img {
+  transform: scale(1);
 }
 
 .project-meta {
@@ -29,5 +48,17 @@
   .project-container {
     width: 80%;
     padding: 0;
+  }
+
+  .project-section {
+    padding: 1rem 0;
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .project-section {
+    padding: 1.5rem 0;
+    font-size: 2.5rem;
   }
 }

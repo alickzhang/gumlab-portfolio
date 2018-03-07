@@ -10,12 +10,18 @@ export default class Header extends Component {
   }
 
   componentDidMount() {
-    document.addEventListener('scroll', () => {
-      const isTop = window.scrollY < window.innerHeight;
-      if (isTop !== this.state.isTop) {
-        this.setState({ isTop });
-      }
-    });
+    document.addEventListener('scroll', this.onScroll);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('scroll', this.onScroll);
+  }
+
+  onScroll = () => {
+    const isTop = window.scrollY < window.innerHeight;
+    if (isTop !== this.state.isTop) {
+      this.setState({ isTop });
+    }
   }
 
   render() {
@@ -29,7 +35,7 @@ export default class Header extends Component {
           <Link to="/about">Infos</Link>
           <a>cn</a>
         </nav>
-        {false && <div className={isTop ? "bars" : "bars dark"} onClick={this.props.onSidebarOpen}><i className="fa fa-bars" /></div>}
+        {/*<div className={isTop ? "bars" : "bars dark"} onClick={this.props.onSidebarOpen}><i className="fa fa-bars" /></div>*/}
       </div>
     );
   }

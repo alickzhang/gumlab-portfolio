@@ -68,3 +68,8 @@ figure {
   padding: 0;
   list-style-type: none;
 }
+
+h1,
+h2 {
+  color: rgba(0, 0, 0, .75);
+}

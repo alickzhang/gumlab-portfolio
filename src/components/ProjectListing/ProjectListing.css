@@ -1,6 +1,6 @@
 .view-all-text {
   margin: 2rem 0;
-  color: rgb(0, 0, 0);
+  color: rgba(0, 0, 0, .75);
   line-height: 1.5;
   text-align: center;
   text-transform: uppercase;
