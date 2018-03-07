@@ -10,7 +10,7 @@ module.exports = {
   siteFBAppID: "", // FB Application ID for using app insights
   googleAnalyticsID: "", // GA tracking ID.
   disqusShortname: "", // Disqus shortname.
-  projectDefaultCategoryID: "Tech", // Default category for projects.
+  projectDefaultCategoryID: "Animation", // Default category for projects.
   userName: "Wen Shi", // Username to display in the author segment.
   userTwitter: "WEN__SHI", // Optionally renders "Follow Me" in the UserInfo segment.
   userLocation: "Melbourne, Australia", // User location to display in the author segment.

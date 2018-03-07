@@ -1,7 +1,7 @@
 ---
 title: "YO'HOOD HANDSHAKES x FUTURA"
 cover: "http://images.contentful.com/uftyz5b3faoy/1mOIOmBwNa2o4iQukgmgoA/75202a71efece6a6762fc2b4439fe95b/BaillatSite_HeroImage_Template2.jpg"
-category: "animation"
+category: "Animation"
 date: "01/03/2018"
 featured: true
 tags:
