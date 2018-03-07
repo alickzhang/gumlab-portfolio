@@ -4,7 +4,13 @@
   margin: 0 auto;
 }
 
-.project-container .gatsby-resp-image-wrapper {
+.project-container img {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.project-container .gatsby-resp-image-wrapper,
+.project-container .gatsby-resp-iframe-wrapper {
   padding: 1.25rem 0;
   overflow: hidden;
 }
@@ -36,11 +42,6 @@
   flex-direction: column;
   justify-content: center;
   margin: 2rem 0 4rem;
-}
-
-.project-container .language-no-highlight {
-  background-color: #e0e0e0;
-  text-align: center;
 }
 
 @media (min-width: 768px) {

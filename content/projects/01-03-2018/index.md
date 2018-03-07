@@ -22,9 +22,13 @@ tags:
 
 ![](./assets/HandStylesHAND_C-still-r1_0005.jpg)
 
-```no-highlight
-<iframe src="https://player.vimeo.com/video/248272167?title=0&byline=0&portrait=0" width="1440" height="810" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-```
+<iframe src="https://player.vimeo.com/video/248272167?title=0&byline=0&portrait=0"
+    width="1440" 
+    height="810" 
+    frameborder="0" 
+    webkitallowfullscreen 
+    mozallowfullscreen 
+    allowfullscreen></iframe>
 
 **Full Credits:**
 
