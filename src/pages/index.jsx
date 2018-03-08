@@ -56,14 +56,14 @@ export const pageQuery = graphql`
             featured
             cover {
               childImageSharp {
-                sizes(maxWidth: 1600) {
+                sizes(maxWidth: 1600, quality: 95) {
                   ...GatsbyImageSharpSizes
                 }
               }
             }
             featuredImages {
               childImageSharp {
-                sizes(maxWidth: 1200) {
+                sizes(maxWidth: 1200, quality: 95) {
                   ...GatsbyImageSharpSizes
                 }
               }
