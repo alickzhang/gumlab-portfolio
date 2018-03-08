@@ -6,6 +6,7 @@ import ProjectTags from "../components/ProjectTags/ProjectTags";
 import SocialLinks from "../components/SocialLinks/SocialLinks";
 import SEO from "../components/SEO/SEO";
 import Cover from "../components/Cover/Cover";
+import Footer from "../components/Footer/Footer";
 import config from "../../data/SiteConfig";
 
 import "./b16-tomorrow-dark.css";
@@ -18,8 +19,8 @@ export default class ProjectTemplate extends React.Component {
   }
 
   componentDidMount() {
-    const project = this.props.data.markdownRemark.frontmatter;
     document.addEventListener('scroll', this.onScroll);
+    const project = this.props.data.markdownRemark.frontmatter;
     const elements = document.getElementsByClassName('project-content')[0].childNodes;
     elements.forEach(el => {
       el.className="project-section";
@@ -34,6 +35,9 @@ export default class ProjectTemplate extends React.Component {
 
   onScroll = () => {
     const { elements } = this.state;
+    if (window.scrollY + window.innerHeight >= document.body.offsetHeight) {
+      window.scroll(0, 0);
+    }
     elements.forEach(el => {
       if (!el.classList) {
         return;
@@ -73,9 +77,10 @@ export default class ProjectTemplate extends React.Component {
           <div className="project-content" dangerouslySetInnerHTML={{ __html: projectNode.html }} />
           <div className="project-meta" style={{ color: project.color, background: project.background }}>
             <ProjectTags tags={project.tags} />
-            {/* <SocialLinks projectPath={slug} projectNode={projectNode} /> */}
           </div>
         </div>
+        <Footer config={config} />
+        <Cover coverImg={coverSrc} fixed title={project.title} />
       </div>
     );
   }

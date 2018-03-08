@@ -68,7 +68,6 @@ export default class MainLayout extends React.Component {
         <Header onSidebarOpen={this.onSidebarOpen} />
         <Sidebar open={sidebarOpen} onSidebarClose={this.onSidebarClose} />
         {children()}
-        <Footer config={config} />
       </div>
     );
   }

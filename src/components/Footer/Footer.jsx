@@ -17,10 +17,10 @@ class Footer extends Component {
             <address>
               <strong>GUMLAB</strong>
               Armadale,<br />
-              Melbourne AUS
+              Melbourne Australia
             </address>
             <address>
-              Jingan Qu,<br />
+              Jing&apos;an,<br />
               Shanghai China
             </address>
           </section>
