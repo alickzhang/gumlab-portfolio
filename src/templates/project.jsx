@@ -60,7 +60,11 @@ export default class ProjectTemplate extends React.Component {
     const { slug } = this.props.pathContext;
     const projectNode = this.props.data.markdownRemark;
     const project = projectNode.frontmatter;
-    const coverSrc = project.cover ? project.cover.childImageSharp.sizes.src : '';
+    let coverSizes = null;
+    if (project.cover && project.cover.childImageSharp) {
+      coverSizes = project.cover.childImageSharp.sizes;
+    }
+    const coverUrl = !coverSizes ? project.cover : null;
     if (!project.id) {
       project.id = slug;
     }
@@ -73,7 +77,7 @@ export default class ProjectTemplate extends React.Component {
           <title>{`${project.title} | ${config.siteTitle}`}</title>
         </Helmet>
         <SEO projectPath={slug} projectNode={projectNode} projectSEO />
-        <Cover coverImg={coverSrc} fadein fixed title={project.title} />
+        <Cover url={coverUrl} sizes={coverSizes} fadein fixed title={project.title} />
         <Header color={project.color} background={project.background} />
         <div className="project-container" style={{ color: project.color, background: project.background }}>
           <div className="project-content" dangerouslySetInnerHTML={{ __html: projectNode.html }} />
@@ -82,7 +86,7 @@ export default class ProjectTemplate extends React.Component {
           </div>
         </div>
         <Footer config={config} />
-        <Cover coverImg={coverSrc} fixed title={project.title} />
+        <Cover url={coverUrl} sizes={coverSizes} fixed title={project.title} />
       </div>
     );
   }
@@ -98,8 +102,8 @@ export const pageQuery = graphql`
       frontmatter {
         title
         cover {
-          childImageSharp{
-            sizes {
+          childImageSharp {
+            sizes(maxWidth: 1600) {
               ...GatsbyImageSharpSizes
             }
           }
@@ -109,13 +113,6 @@ export const pageQuery = graphql`
         tags
         color
         background
-        featuredImages {
-          childImageSharp {
-            sizes {
-              ...GatsbyImageSharpSizes
-            }
-          }
-        }
       }
       fields {
         slug

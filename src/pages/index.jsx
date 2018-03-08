@@ -24,7 +24,7 @@ class Index extends Component {
       <div className="index-container">
         <Helmet title={config.siteTitle} />
         <SEO projectEdges={projectEdges} />
-        <Cover coverImg={imgUrl} />
+        <Cover url={imgUrl} />
         <ProjectListing projectEdges={projectEdges} />
         <Footer config={config} />
       </div>
@@ -55,15 +55,15 @@ export const pageQuery = graphql`
             date
             featured
             cover {
-              childImageSharp{
-                sizes {
+              childImageSharp {
+                sizes(maxWidth: 1600) {
                   ...GatsbyImageSharpSizes
                 }
               }
             }
             featuredImages {
-              childImageSharp{
-                sizes {
+              childImageSharp {
+                sizes(maxWidth: 1200) {
                   ...GatsbyImageSharpSizes
                 }
               }

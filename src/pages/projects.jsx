@@ -37,13 +37,13 @@ export default class Projects extends Component {
     return (
       <div className="projects-container">
         <Helmet title={`Projects | ${config.siteTitle}`} />
-        <Cover coverImg={imgUrl} fadein />
+        <Cover url={imgUrl} fadein />
         <div>
           <div className="projects-layout">
             {projectList.map(edge => (
               <div className="project-item">
                 <div className="cover-img" style={{ backgroundImage: `url(${edge.cover}`, backgroundSize: 'contain' }}>
-                  <img src={edge.cover.childImageSharp.sizes.src} alt="cover" style={{ visibility: 'hidden' }} />
+                  <img srcSet={edge.cover.childImageSharp.sizes.srcSet} alt="cover" style={{ visibility: 'hidden' }} />
                 </div>
               </div>
             ))}
@@ -75,8 +75,8 @@ export const pageQuery = graphql`
             tags
             date
             cover {
-              childImageSharp{
-                sizes {
+              childImageSharp {
+                sizes(maxWidth: 1600) {
                   ...GatsbyImageSharpSizes
                 }
               }

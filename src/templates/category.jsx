@@ -39,8 +39,8 @@ export const pageQuery = graphql`
             tags
             date
             cover {
-              childImageSharp{
-                sizes {
+              childImageSharp {
+                sizes(maxWidth: 1600) {
                   ...GatsbyImageSharpSizes
                 }
               }

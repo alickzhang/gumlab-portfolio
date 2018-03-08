@@ -71,7 +71,7 @@ export default class Feature extends Component {
         </div>
         {images.map(item =>
           <figure key={item.childImageSharp.sizes.src} className="feature-img">
-            <img src={item.childImageSharp.sizes.src} alt={title} />
+            <img srcSet={item.childImageSharp.sizes.srcSet} alt={title} />
           </figure>
         )}
       </Fragment>
