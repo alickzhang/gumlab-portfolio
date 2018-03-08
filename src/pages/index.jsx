@@ -5,6 +5,7 @@ import "font-awesome/css/font-awesome.min.css";
 import ProjectListing from "../components/ProjectListing/ProjectListing";
 import SEO from "../components/SEO/SEO";
 import Cover from "../components/Cover/Cover";
+import Footer from "../components/Footer/Footer";
 import config from "../../data/SiteConfig";
 
 import "./index.css";
@@ -25,6 +26,7 @@ class Index extends Component {
         <SEO projectEdges={projectEdges} />
         <Cover coverImg={imgUrl} />
         <ProjectListing projectEdges={projectEdges} />
+        <Footer config={config} />
       </div>
     );
   }

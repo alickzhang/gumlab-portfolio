@@ -1,9 +1,20 @@
 import React, { Component } from "react";
 import Link from "gatsby-link";
+import PropTypes from "prop-types";
 
 import "./Header.css";
 
 export default class Header extends Component {
+
+  static propTypes = {
+    color: PropTypes.string,
+    background: PropTypes.string,
+  }
+
+  static defaultProps = {
+    color: 'rgba(0, 0, 0, .75)',
+    background: '#fff',
+  }
 
   state = {
     isTop: true,
@@ -25,10 +36,11 @@ export default class Header extends Component {
   }
 
   render() {
+    const { color, background } = this.props;
     const { isTop } = this.state;
     return (
-      <div className="header">
-        <h1 className="header-brand"><Link to="/">Gumlab</Link></h1>
+      <div className="header" style={{ color: color, background: background }}>
+        <div className="header-brand"><Link to="/">Gumlab</Link></div>
         <nav className="header-links">
           <Link to="/projects">Projects</Link>
           <Link to="/">Studios</Link>

@@ -5,6 +5,7 @@ import UserInfo from "../components/UserInfo/UserInfo";
 import ProjectTags from "../components/ProjectTags/ProjectTags";
 import SocialLinks from "../components/SocialLinks/SocialLinks";
 import SEO from "../components/SEO/SEO";
+import Header from "../components/Header/Header";
 import Cover from "../components/Cover/Cover";
 import Footer from "../components/Footer/Footer";
 import config from "../../data/SiteConfig";
@@ -73,9 +74,10 @@ export default class ProjectTemplate extends React.Component {
         </Helmet>
         <SEO projectPath={slug} projectNode={projectNode} projectSEO />
         <Cover coverImg={coverSrc} fadein fixed title={project.title} />
+        <Header color={project.color} background={project.background} />
         <div className="project-container" style={{ color: project.color, background: project.background }}>
           <div className="project-content" dangerouslySetInnerHTML={{ __html: projectNode.html }} />
-          <div className="project-meta" style={{ color: project.color, background: project.background }}>
+          <div className="project-meta">
             <ProjectTags tags={project.tags} />
           </div>
         </div>

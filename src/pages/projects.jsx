@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Helmet from "react-helmet";
 
 import Cover from "../components/Cover/Cover";
+import Footer from "../components/Footer/Footer";
 import config from "../../data/SiteConfig";
 
 import "./projects.css";
@@ -16,15 +17,15 @@ export default class Projects extends Component {
   getProjectList() {
     const projectEdges = this.props.data.allMarkdownRemark.edges;
     const projectList = [];
-    projectEdges.forEach(projectEdge => {
+    projectEdges.forEach(({ node }) => {
       projectList.push({
-        path: `projects${projectEdge.node.fields.slug}`,
-        tags: projectEdge.node.frontmatter.tags,
-        cover: projectEdge.node.frontmatter.cover,
-        title: projectEdge.node.frontmatter.title,
-        date: projectEdge.node.frontmatter.date,
-        excerpt: projectEdge.node.excerpt,
-        timeToRead: projectEdge.node.timeToRead
+        path: `projects${node.fields.slug}`,
+        tags: node.frontmatter.tags,
+        cover: node.frontmatter.cover,
+        title: node.frontmatter.title,
+        date: node.frontmatter.date,
+        excerpt: node.excerpt,
+        timeToRead: node.timeToRead
       });
     });
     return projectList;
@@ -42,12 +43,13 @@ export default class Projects extends Component {
             {projectList.map(edge => (
               <div className="project-item">
                 <div className="cover-img" style={{ backgroundImage: `url(${edge.cover}`, backgroundSize: 'contain' }}>
-                  <img src={edge.cover} alt="cover" style={{ visibility: 'hidden' }} />
+                  <img src={edge.cover.childImageSharp.sizes.src} alt="cover" style={{ visibility: 'hidden' }} />
                 </div>
               </div>
             ))}
           </div>
         </div>
+        <Footer config={config} />
       </div>
     );
   }

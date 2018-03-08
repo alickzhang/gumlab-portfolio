@@ -1,11 +1,11 @@
 .project-tag {
   font-size: 1rem;
   margin-right: 1rem;
-  transition: color linear 150ms;
+  transition: opacity linear 150ms;
 }
 
 .project-tag:hover {
-  opacity: .8;
+  opacity: .75;
 }
 
 .project-tag:before {
