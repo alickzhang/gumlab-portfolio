@@ -1,12 +1,11 @@
 .project-tag {
-  color: rgba(0, 0, 0, .65);
   font-size: 1rem;
   margin-right: 1rem;
   transition: color linear 150ms;
 }
 
 .project-tag:hover {
-  color: rgba(0, 0, 0, 1);
+  opacity: .8;
 }
 
 .project-tag:before {

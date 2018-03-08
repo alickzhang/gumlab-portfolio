@@ -1,15 +1,18 @@
 ---
 title: "YO'HOOD HANDSHAKES x FUTURA"
-cover: "http://images.contentful.com/uftyz5b3faoy/1mOIOmBwNa2o4iQukgmgoA/75202a71efece6a6762fc2b4439fe95b/BaillatSite_HeroImage_Template2.jpg"
+cover: "./assets/cover.jpg"
 category: "Animation"
 date: "01/03/2018"
 featured: true
+color: "#fff"
+background: "rgb(20, 41, 57)"
 tags:
     - FUTURA
     - NIGO
     - street fasion
     - hip-hop
     - 3D
+featuredImages: ["./assets/cover.jpg", "./assets/Yohood_highres.00_00_15_16.Still005.jpg"]
 ---
 
 ![](./assets/Yohood_highres.00_00_18_01.Still006.jpg)
@@ -23,11 +26,11 @@ tags:
 ![](./assets/HandStylesHAND_C-still-r1_0005.jpg)
 
 <iframe src="https://player.vimeo.com/video/248272167?title=0&byline=0&portrait=0"
-    width="1440" 
-    height="810" 
-    frameborder="0" 
-    webkitallowfullscreen 
-    mozallowfullscreen 
+    width="1440"
+    height="810"
+    frameborder="0"
+    webkitallowfullscreen
+    mozallowfullscreen
     allowfullscreen></iframe>
 
 **Full Credits:**

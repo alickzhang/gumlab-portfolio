@@ -8,7 +8,7 @@ export default class Feature extends Component {
 
   static propTypes = {
     title: PropTypes.string,
-    pictures: PropTypes.array,
+    images: PropTypes.array,
     path: PropTypes.string,
   }
 
@@ -62,16 +62,16 @@ export default class Feature extends Component {
   }
 
   render() {
-    const { title, pictures, path } = this.props;
+    const { title, images, path } = this.props;
     const featureEl = (
       <Fragment>
         <div className="feature-text">
           <div className="title">{title}</div>
           <span className="link">Read More</span>
         </div>
-        {pictures.map(item =>
-          <figure key={item} className="feature-img">
-            <img src={item} alt={title} />
+        {images.map(item =>
+          <figure key={item.childImageSharp.sizes.src} className="feature-img">
+            <img src={item.childImageSharp.sizes.src} alt={title} />
           </figure>
         )}
       </Fragment>

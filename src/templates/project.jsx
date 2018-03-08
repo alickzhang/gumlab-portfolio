@@ -18,10 +18,12 @@ export default class ProjectTemplate extends React.Component {
   }
 
   componentDidMount() {
+    const project = this.props.data.markdownRemark.frontmatter;
     document.addEventListener('scroll', this.onScroll);
     const elements = document.getElementsByClassName('project-content')[0].childNodes;
     elements.forEach(el => {
       el.className="project-section";
+      el.style=`color: ${project.color}`;
     });
     this.setState({ elements });
   }
@@ -53,6 +55,7 @@ export default class ProjectTemplate extends React.Component {
     const { slug } = this.props.pathContext;
     const projectNode = this.props.data.markdownRemark;
     const project = projectNode.frontmatter;
+    const coverSrc = project.cover ? project.cover.childImageSharp.sizes.src : '';
     if (!project.id) {
       project.id = slug;
     }
@@ -65,10 +68,10 @@ export default class ProjectTemplate extends React.Component {
           <title>{`${project.title} | ${config.siteTitle}`}</title>
         </Helmet>
         <SEO projectPath={slug} projectNode={projectNode} projectSEO />
-        <Cover coverImg={project.cover} fadein fixed title={project.title} />
-        <div className="project-container">
+        <Cover coverImg={coverSrc} fadein fixed title={project.title} />
+        <div className="project-container" style={{ color: project.color, background: project.background }}>
           <div className="project-content" dangerouslySetInnerHTML={{ __html: projectNode.html }} />
-          <div className="project-meta">
+          <div className="project-meta" style={{ color: project.color, background: project.background }}>
             <ProjectTags tags={project.tags} />
             {/* <SocialLinks projectPath={slug} projectNode={projectNode} /> */}
           </div>
@@ -87,10 +90,25 @@ export const pageQuery = graphql`
       excerpt
       frontmatter {
         title
-        cover
+        cover {
+          childImageSharp{
+            sizes {
+              ...GatsbyImageSharpSizes
+            }
+          }
+        }
         date
         category
         tags
+        color
+        background
+        featuredImages {
+          childImageSharp {
+            sizes {
+              ...GatsbyImageSharpSizes
+            }
+          }
+        }
       }
       fields {
         slug

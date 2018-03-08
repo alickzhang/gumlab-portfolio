@@ -17,8 +17,9 @@ class ProjectListing extends Component {
           cover: node.frontmatter.cover,
           title: node.frontmatter.title,
           date: node.frontmatter.date,
+          featuredImages: node.frontmatter.featuredImages,
           excerpt: node.excerpt,
-          timeToRead: node.timeToRead
+          timeToRead: node.timeToRead,
         });
       }
     });
@@ -31,7 +32,7 @@ class ProjectListing extends Component {
       <div className="project-list">
         <div className="featured">
           {projectList.map(project => (
-            <Feature key={project.title} title={project.title} pictures={[project.cover]} path={project.path} />
+            <Feature key={project.title} title={project.title} images={project.featuredImages || []} path={project.path} />
           ))}
         </div>
         <div className="view-all-text"><Link to="/projects">View All Projects</Link></div>
