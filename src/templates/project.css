@@ -9,12 +9,6 @@
   margin: 20px 0;
 }
 
-.project-container .gatsby-resp-image-wrapper,
-.project-container .gatsby-resp-iframe-wrapper {
-  padding: 1.25rem 0;
-  overflow: hidden;
-}
-
 .project-section {
   margin: 0;
   padding: 0.5rem 0;
