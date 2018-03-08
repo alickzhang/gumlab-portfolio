@@ -27,6 +27,7 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
       slug = `/${parsedFilePath.dir}/`;
     }
     createNodeField({ node, name: "slug", value: slug });
+    createNodeField({ node, name: "audience", value: /-cn$/.test(fileNode.name) ? "cn" : "row" })
   }
 };
 
@@ -44,12 +45,14 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             allMarkdownRemark {
               edges {
                 node {
+                  fileAbsolutePath
                   frontmatter {
                     tags
                     category
                   }
                   fields {
                     slug
+                    audience
                   }
                 }
               }
@@ -76,13 +79,25 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             categorySet.add(edge.node.frontmatter.category);
           }
 
-          createPage({
-            path: `/projects${edge.node.fields.slug}`,
-            component: projectPage,
-            context: {
-              slug: edge.node.fields.slug
-            }
-          });
+          if (/-cn\.md$/.test(edge.node.fileAbsolutePath)) {
+            createPage({
+              path: `/cn/projects${edge.node.fields.slug}`,
+              component: projectPage,
+              context: {
+                slug: edge.node.fields.slug,
+                audience: "cn"
+              }
+            });  
+          } else {
+            createPage({
+              path: `/projects${edge.node.fields.slug}`,
+              component: projectPage,
+              context: {
+                slug: edge.node.fields.slug,
+                audience: "row"
+              }
+            });
+          }
         });
 
         const tagList = Array.from(tagSet);

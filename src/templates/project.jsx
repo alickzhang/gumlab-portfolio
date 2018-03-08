@@ -80,8 +80,8 @@ export default class ProjectTemplate extends React.Component {
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
-  query ProjectBySlug($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+  query ProjectBySlugAndAudience($slug: String!, $audience: String!) {
+    markdownRemark(fields: { slug: { eq: $slug }, audience: { eq: $audience } }) {
       html
       timeToRead
       excerpt

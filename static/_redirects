@@ -1,0 +1,2 @@
+# Redirect users in China to /cn
+/projects/*  /cn/projects/:splat  302  Country=cn
