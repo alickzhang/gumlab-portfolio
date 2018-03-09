@@ -38,7 +38,7 @@ featuredImages: [
 
 ![](./assets/b9300360340033.5a48519199b50.jpg)
 
-**Credits**
+### Credits
 
 - Client: Adidas Originals
 - Director: Anxing

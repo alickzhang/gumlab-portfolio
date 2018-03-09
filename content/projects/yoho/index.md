@@ -4,7 +4,7 @@ cover: "./assets/f1617060092291.5a3c9b25233d2.jpg"
 category: "Animation"
 date: "21/12/2017"
 featured: true
-color: "#696969"
+color: "#fff"
 background: "#000"
 tags:
   - Animation
@@ -39,7 +39,7 @@ featuredImages: [
 
 ![](./assets/caae1360092291.5a3c9f2656c30.jpg)
 
-**Full Credits:**
+### Full Credits
 
 - Client: Yoho!
 - Agency: Studio Gumwap

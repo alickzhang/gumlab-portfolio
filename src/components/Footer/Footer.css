@@ -2,7 +2,6 @@
   background: #e0e0e0;
   color: rgba(0, 0, 0, .75);
   font-size: 1.8rem;
-  line-height: 1.65;
   padding: 3rem 10vw 2rem;
 }
 
@@ -21,19 +20,12 @@
 
 .footer address {
   font-style: normal;
-  line-height: 1.5;
   margin-bottom: .5rem;
 }
 
 .footer address strong {
   display: block;
   line-height: 3.3;
-}
-
-.footer address {
-  font-style: normal;
-  line-height: 1.5;
-  margin-bottom: .5rem;
 }
 
 .copyright {

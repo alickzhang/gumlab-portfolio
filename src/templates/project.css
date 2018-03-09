@@ -20,8 +20,6 @@
 
 .project-section {
   color: inherit !important;
-  margin: 0;
-  padding: 0.5rem 0;
   opacity: 0;
   transform: translateY(4vh);
   transition: all .2s ease-in-out;
@@ -41,6 +39,11 @@
   transform: scale(1);
 }
 
+.project-section .gatsby-resp-image-wrapper,
+.project-section .gatsby-resp-iframe-wrapper {
+  margin: 2rem 0;
+}
+
 .project-meta {
   display: flex;
   flex-direction: column;
@@ -51,15 +54,5 @@
 @media (min-width: 768px) {
   .project-container {
     padding: 5rem 10vw 0;
-  }
-
-  .project-section {
-    padding: 1rem 0;
-  }
-}
-
-@media (min-width: 1200px) {
-  .project-section {
-    padding: 1.5rem 0;
   }
 }

@@ -37,7 +37,7 @@ featuredImages: [
 
 ![](./assets/838da060531691.5a5044c8a2509.jpg)
 
-**Credits**
+### Credits
 
 - Client: Sportsbet
 - Creative Director: Wen Shi, Dan Howe

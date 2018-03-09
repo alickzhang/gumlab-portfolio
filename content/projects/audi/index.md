@@ -55,7 +55,7 @@ featuredImages: [
 
 ![](./assets/89647459934259.5a378b488c8b6.gif)
 
-**Credits**
+### Credits
 
 - Director: Anxing
 - DOP: Yang Fei
