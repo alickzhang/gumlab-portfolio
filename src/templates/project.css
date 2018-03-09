@@ -12,6 +12,12 @@
   overflow: hidden;
 }
 
+.project-content,
+.project-meta {
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
 .project-section {
   margin: 0;
   padding: 0.5rem 0;

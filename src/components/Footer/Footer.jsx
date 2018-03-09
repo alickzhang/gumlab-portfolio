@@ -20,7 +20,7 @@ class Footer extends Component {
               Melbourne Australia
             </address>
             <address>
-              Jing&apos;an,<br />
+              Jing&apos;an District,<br />
               Shanghai China
             </address>
           </section>
