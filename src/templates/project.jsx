@@ -24,8 +24,7 @@ export default class ProjectTemplate extends React.Component {
     const project = this.props.data.markdownRemark.frontmatter;
     const elements = document.getElementsByClassName('project-content')[0].childNodes;
     elements.forEach(el => {
-      el.className="project-section";
-      el.style=`color: ${project.color}`;
+      el.className = "project-section";
     });
     this.setState({ elements });
   }
