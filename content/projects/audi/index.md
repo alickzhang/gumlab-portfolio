@@ -4,11 +4,11 @@ cover: "./assets/ce23fe59934259.5a377d814d80f.jpg"
 category: "Animation"
 date: "18/12/2017"
 featured: true
-color: "#696969"
+color: "#fff"
 background: "#000000"
 tags:
   - Advertising
-  - Animatin
+  - Animation
   - Motion Graphics
 featuredImages: [
   "./assets/2f9e4559934259.5a377d814d450.jpg",

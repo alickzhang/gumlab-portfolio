@@ -7,7 +7,7 @@ featured: true
 color: "#fff"
 background: "#031d56"
 tags:
-  - Animatin
+  - Animation
   - Art Direction
   - Motion Graphics
 featuredImages: [

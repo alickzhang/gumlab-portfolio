@@ -56,8 +56,8 @@ module.exports = {
         color: config.themeColor
       }
     },
-    "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
     "gatsby-plugin-catch-links",
     "gatsby-plugin-twitter",
     "gatsby-plugin-sitemap",

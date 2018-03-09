@@ -5,10 +5,10 @@ category: "Animation"
 date: "02/01/2018"
 featured: true
 color: "#fff"
-background: "#031d56"
+background: "#000"
 tags:
   - Advertising
-  - Animatin
+  - Animation
   - Motion Graphics
 featuredImages: [
   "./assets/92283560340033.5a4851919abd3.jpg", 

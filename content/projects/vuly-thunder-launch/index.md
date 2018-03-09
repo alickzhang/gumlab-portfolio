@@ -8,7 +8,7 @@ color: "#696969"
 background: "#fff"
 tags:
   - Advertising
-  - Animatin
+  - Animation
   - Art Direction
 featuredImages: [
   "./assets/78698a60864777.5a5c42571fa3e.png", 
