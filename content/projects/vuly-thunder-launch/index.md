@@ -1,6 +1,6 @@
 ---
 title: "Vuly Thunder Launch"
-cover: "./assets/78698a60864777.5a5c42571fa3e.png"
+cover: "./assets/cover.jpg"
 category: "Animation"
 date: "15/01/2018"
 featured: true
