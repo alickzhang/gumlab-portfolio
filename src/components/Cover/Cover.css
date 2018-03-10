@@ -50,6 +50,9 @@
 }
 
 .down {
+  background: transparent;
+  border: none;
+  outline: none;
   position: absolute;
   bottom: 0;
   width: 100%;

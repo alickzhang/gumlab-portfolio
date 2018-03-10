@@ -1,9 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
-
-import UserInfo from "../components/UserInfo/UserInfo";
 import ProjectTags from "../components/ProjectTags/ProjectTags";
-import SocialLinks from "../components/SocialLinks/SocialLinks";
 import SEO from "../components/SEO/SEO";
 import Header from "../components/Header/Header";
 import Cover from "../components/Cover/Cover";
@@ -21,7 +18,6 @@ export default class ProjectTemplate extends React.Component {
 
   componentDidMount() {
     document.addEventListener('scroll', this.onScroll);
-    const project = this.props.data.markdownRemark.frontmatter;
     const elements = document.getElementsByClassName('project-content')[0].childNodes;
     elements.forEach(el => {
       el.className = "project-section";

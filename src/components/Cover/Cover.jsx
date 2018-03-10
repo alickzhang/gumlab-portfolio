@@ -1,9 +1,7 @@
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-
 import Img from "gatsby-image";
-
 import "./Cover.css";
 
 export default class Cover extends Component {
@@ -13,7 +11,7 @@ export default class Cover extends Component {
     sizes: PropTypes.object,
     fadein: PropTypes.bool,
     fixed: PropTypes.bool,
-    title: PropTypes.string,
+    title: PropTypes.string.isRequired,
   }
 
   static defaultProps = {
@@ -29,7 +27,7 @@ export default class Cover extends Component {
 
   render() {
     const { url, sizes, fadein, fixed, title } = this.props;
-    const coverClass = classNames('cover-img', { fadein: fadein, fixed: fixed });
+    const coverClass = classNames('cover-img', { fadein, fixed });
     return (
       <Fragment>
         <div className="cover">
@@ -39,7 +37,7 @@ export default class Cover extends Component {
             : <div className={coverClass} style={{ backgroundImage: `url(${url}` }} />
           }
           {title && <div className="cover-title">{title}</div>}
-          <div className="down" onClick={this.scrollDown}><i className="fa fa-chevron-down" /></div>
+          <button className="down" onClick={this.scrollDown}><i className="fa fa-chevron-down" /></button>
         </div>
         <div id="start" />
       </Fragment>

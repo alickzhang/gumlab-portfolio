@@ -21,7 +21,7 @@ featuredImages: [
 
 # YOHO X FUTURA
 
-## GUMLAB collaborated with Futura to create this piece of work to capture the diversity of street fashion. With the concept of “friendship”, this video established the idea that YO’HOOD is a platform where the cool youngsters meets. http://www.yohood.cn/
+## GUMLAB collaborated with Futura to create this piece of work to capture the diversity of street fashion. With the concept of “friendship”, this video established the idea that YO’HOOD is a platform where the cool youngsters meets. [http://www.yohood.cn](http://www.yohood.cn)
 
 <iframe src="https://player.vimeo.com/video/248272167?title=0&byline=0&portrait=0"
   width="1440"
