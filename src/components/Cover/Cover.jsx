@@ -12,11 +12,13 @@ export default class Cover extends Component {
     fadein: PropTypes.bool,
     fixed: PropTypes.bool,
     title: PropTypes.string.isRequired,
+    titleColor: PropTypes.string,
   }
 
   static defaultProps = {
     fadein: false,
     fixed: false,
+    titleColor: '#fff',
   }
 
   scrollDown = (e) => {
@@ -26,7 +28,7 @@ export default class Cover extends Component {
   }
 
   render() {
-    const { url, sizes, fadein, fixed, title } = this.props;
+    const { url, sizes, fadein, fixed, title, titleColor } = this.props;
     const coverClass = classNames('cover-img', { fadein, fixed });
     return (
       <Fragment>
@@ -36,7 +38,7 @@ export default class Cover extends Component {
             ? <Img sizes={sizes} fadeIn={fadein} className={coverClass} />
             : <div className={coverClass} style={{ backgroundImage: `url(${url}` }} />
           }
-          {title && <div className="cover-title">{title}</div>}
+          {title && <div className="cover-title" style={{ color: titleColor }}>{title}</div>}
           <button className="down" onClick={this.scrollDown}><i className="fa fa-chevron-down" /></button>
         </div>
         <div id="start" />

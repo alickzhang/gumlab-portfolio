@@ -6,21 +6,22 @@ date: "07/01/2018"
 featured: true
 color: "#fff"
 background: "#031d56"
+titleColor: "#fff"
 tags:
   - Animation
   - Art Direction
   - Motion Graphics
 featuredImages: [
-  "./assets/8930e460531691.5a5044c8a19e7.jpg", 
+  "./assets/8930e460531691.5a5044c8a19e7.jpg",
   "./assets/0e083260531691.5a5044c8a1f47.jpg"]
 ---
 
-<iframe src="https://player.vimeo.com/video/249741323?title=0&byline=0&portrait=0" 
-  width="640" 
-  height="360" 
-  frameborder="0" 
-  webkitallowfullscreen 
-  mozallowfullscreen 
+<iframe src="https://player.vimeo.com/video/249741323?title=0&byline=0&portrait=0"
+  width="640"
+  height="360"
+  frameborder="0"
+  webkitallowfullscreen
+  mozallowfullscreen
   allowfullscreen></iframe>
 
 # A TVC campaign with hyper-stylised animation, based on real life action moments induces "That Finals Feeling".

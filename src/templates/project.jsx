@@ -67,7 +67,7 @@ export default class ProjectTemplate extends React.Component {
           <title>{`${project.title} | ${config.siteTitle}`}</title>
         </Helmet>
         <SEO projectPath={slug} projectNode={projectNode} projectSEO />
-        <Cover url={coverUrl} sizes={coverSizes} fadein fixed title={project.title} />
+        <Cover url={coverUrl} sizes={coverSizes} fadein fixed title={project.title} titleColor={project.titleColor} />
         <Header color={project.color} background={project.background} />
         <div className="project-container" style={{ color: project.color, background: project.background }}>
           <div className="project-content" dangerouslySetInnerHTML={{ __html: projectNode.html }} />
@@ -76,7 +76,7 @@ export default class ProjectTemplate extends React.Component {
           </div>
         </div>
         <Footer config={config} />
-        <Cover url={coverUrl} sizes={coverSizes} fixed title={project.title} />
+        <Cover url={coverUrl} sizes={coverSizes} fixed title={project.title} titleColor={project.titleColor} />
       </div>
     );
   }
@@ -103,6 +103,7 @@ export const pageQuery = graphql`
         tags
         color
         background
+        titleColor
       }
       fields {
         slug

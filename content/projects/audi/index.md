@@ -6,6 +6,7 @@ date: "18/12/2017"
 featured: true
 color: "#fff"
 background: "#000000"
+titleColor: "#fff"
 tags:
   - Advertising
   - Animation
@@ -18,11 +19,11 @@ featuredImages: [
 ---
 
 <iframe src="https://player.vimeo.com/video/247773062?title=0&byline=0"
-  width="640" 
-  height="360" 
-  frameborder="0" 
-  webkitallowfullscreen 
-  mozallowfullscreen 
+  width="640"
+  height="360"
+  frameborder="0"
+  webkitallowfullscreen
+  mozallowfullscreen
   allowfullscreen></iframe>
 
 # Audi A3 30 Years Anniversary
@@ -43,9 +44,9 @@ featuredImages: [
 
 ![](./assets/15848659934259.5a37871876edc.jpg)
 
-<iframe src="https://player.vimeo.com/video/247773740?title=0&byline=0" 
-  width="640" 
-  height="360" 
+<iframe src="https://player.vimeo.com/video/247773740?title=0&byline=0"
+  width="640"
+  height="360"
   frameborder="0"
   webkitallowfullscreen
   mozallowfullscreen

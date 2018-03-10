@@ -45,7 +45,6 @@ export default class Header extends Component {
           <Link to="/projects">Projects</Link>
           <Link to="/">Studios</Link>
           <Link to="/about">Infos</Link>
-          <a>cn</a>
         </nav>
         {/*<div className={isTop ? "bars" : "bars dark"} onClick={this.props.onSidebarOpen}><i className="fa fa-bars" /></div>*/}
       </div>

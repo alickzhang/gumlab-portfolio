@@ -6,12 +6,13 @@ date: "21/12/2017"
 featured: true
 color: "#fff"
 background: "#000"
+titleColor: "#fff"
 tags:
   - Animation
   - Art Direction
   - Motion Graphics
 featuredImages: [
-  "./assets/f1617060092291.5a3c9b25233d2.jpg", 
+  "./assets/f1617060092291.5a3c9b25233d2.jpg",
   "./assets/31610e60092291.5a3ca1aa43b46.jpg"]
 ---
 

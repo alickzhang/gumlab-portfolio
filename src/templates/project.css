@@ -8,10 +8,6 @@
   margin: 20px 0;
 }
 
-.project-container .gatsby-resp-image-wrapper {
-  overflow: hidden;
-}
-
 .project-content,
 .project-meta {
   margin: 0 auto;
@@ -42,6 +38,7 @@
 .project-section .gatsby-resp-image-wrapper,
 .project-section .gatsby-resp-iframe-wrapper {
   margin: 2rem 0;
+  overflow: hidden;
 }
 
 .project-meta {

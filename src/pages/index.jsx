@@ -12,6 +12,20 @@ import "./index.css";
 
 class Index extends Component {
 
+  componentDidMount() {
+    document.addEventListener('scroll', this.onScroll);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('scroll', this.onScroll);
+  }
+
+  onScroll = () => {
+    if (window.scrollY + window.innerHeight >= document.body.offsetHeight) {
+      window.scroll(0, 0);
+    }
+  }
+
   scrollDown = () => {
     const element = document.getElementById("start");
     element.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -24,9 +38,10 @@ class Index extends Component {
       <div className="index-container">
         <Helmet title={config.siteTitle} />
         <SEO projectEdges={projectEdges} />
-        <Cover url={imgUrl} />
+        <Cover url={imgUrl} fixed />
         <ProjectListing projectEdges={projectEdges} />
         <Footer config={config} />
+        <Cover url={imgUrl} fixed />
       </div>
     );
   }
