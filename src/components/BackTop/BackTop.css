@@ -1,0 +1,23 @@
+.back-top {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform .2s;
+  transform: translateX(200%);
+}
+
+.back-top.visible {
+  transform: translateX(0);
+}
+
+@media (max-width: 480px) {
+  .back-top {
+    display: none;
+  }
+}

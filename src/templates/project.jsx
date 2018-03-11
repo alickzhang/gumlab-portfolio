@@ -5,6 +5,7 @@ import SEO from "../components/SEO/SEO";
 import Header from "../components/Header/Header";
 import Cover from "../components/Cover/Cover";
 import Footer from "../components/Footer/Footer";
+import BackTop from "../components/BackTop/BackTop";
 import config from "../../data/SiteConfig";
 
 import "./project.css";
@@ -77,6 +78,7 @@ export default class ProjectTemplate extends React.Component {
         </div>
         <Footer config={config} />
         <Cover url={coverUrl} sizes={coverSizes} fixed title={project.title} titleColor={project.titleColor} />
+        <BackTop color={project.color} />
       </div>
     );
   }

@@ -11,7 +11,7 @@ export default class Cover extends Component {
     sizes: PropTypes.object,
     fadein: PropTypes.bool,
     fixed: PropTypes.bool,
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     titleColor: PropTypes.string,
   }
 
@@ -39,7 +39,9 @@ export default class Cover extends Component {
             : <div className={coverClass} style={{ backgroundImage: `url(${url}` }} />
           }
           {title && <div className="cover-title" style={{ color: titleColor }}>{title}</div>}
-          <button className="down" onClick={this.scrollDown}><i className="fa fa-chevron-down" /></button>
+          <button className="down" onClick={this.scrollDown} style={{ color: titleColor }}>
+            <i className="fa fa-arrow-down" />
+          </button>
         </div>
         <div id="start" />
       </Fragment>

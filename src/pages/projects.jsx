@@ -3,6 +3,7 @@ import Helmet from "react-helmet";
 
 import Cover from "../components/Cover/Cover";
 import Footer from "../components/Footer/Footer";
+import BackTop from "../components/BackTop/BackTop";
 import config from "../../data/SiteConfig";
 
 import "./projects.css";
@@ -50,6 +51,7 @@ export default class Projects extends Component {
           </div>
         </div>
         <Footer config={config} />
+        <BackTop />
       </div>
     );
   }

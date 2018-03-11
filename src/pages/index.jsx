@@ -6,6 +6,7 @@ import ProjectListing from "../components/ProjectListing/ProjectListing";
 import SEO from "../components/SEO/SEO";
 import Cover from "../components/Cover/Cover";
 import Footer from "../components/Footer/Footer";
+import BackTop from "../components/BackTop/BackTop";
 import config from "../../data/SiteConfig";
 
 import "./index.css";
@@ -42,6 +43,7 @@ class Index extends Component {
         <ProjectListing projectEdges={projectEdges} />
         <Footer config={config} />
         <Cover url={imgUrl} fixed />
+        <BackTop />
       </div>
     );
   }

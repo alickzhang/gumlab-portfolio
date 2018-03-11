@@ -10,26 +10,23 @@ export default class Feature extends Component {
     title: PropTypes.string,
     images: PropTypes.array,
     path: PropTypes.string,
-    defaultSpeed: PropTypes.number
+    defaultSpeed: PropTypes.number,
   }
 
   static defaultProps = {
-    defaultSpeed: 1
+    defaultSpeed: 1,
   }
 
   state = {
-    animationRequest: null,
     speed: 1,
   }
 
   componentWillMount() {
-    this.setState({
-      animationRequest: window.requestAnimationFrame(this.scroll),
-    });
+    this.animationRequest = window.requestAnimationFrame(this.scroll);
   }
 
   componentWillUnmount() {
-    window.cancelAnimationFrame(this.state.animationRequest);
+    window.cancelAnimationFrame(this.animationRequest);
   }
 
   scroll = () => {
@@ -47,9 +44,7 @@ export default class Feature extends Component {
         this.feature.scrollLeft += speed;
       }
     }
-    this.setState({
-      animationRequest: window.requestAnimationFrame(this.scroll),
-    });
+    this.animationRequest = window.requestAnimationFrame(this.scroll);
   }
 
   hover = (e) => {
@@ -86,7 +81,7 @@ export default class Feature extends Component {
       <div
         onMouseMove={this.hover}
         onMouseOut={this.onMouseOut}
-        ref={input => { this.feature = input; }}
+        ref={feature => { this.feature = feature; }}
         className="feature"
       >
         <Link to={path} className="feature-wrapper">
