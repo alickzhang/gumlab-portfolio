@@ -7,22 +7,18 @@ import Cover from "../components/Cover/Cover";
 import Footer from "../components/Footer/Footer";
 import config from "../../data/SiteConfig";
 
-import "./b16-tomorrow-dark.css";
 import "./project.css";
 
 export default class ProjectTemplate extends React.Component {
-
-  state = {
-    elements: null
-  }
 
   componentDidMount() {
     document.addEventListener('scroll', this.onScroll);
     const elements = document.getElementsByClassName('project-content')[0].childNodes;
     elements.forEach(el => {
-      el.className = "project-section";
+      /* eslint no-param-reassign: "off" */
+      el.className = "project-section"
     });
-    this.setState({ elements });
+    this.elements = elements || [];
   }
 
   componentWillUnmount() {
@@ -30,11 +26,10 @@ export default class ProjectTemplate extends React.Component {
   }
 
   onScroll = () => {
-    const { elements } = this.state;
     if (window.scrollY + window.innerHeight >= document.body.offsetHeight) {
       window.scroll(0, 0);
     }
-    elements.forEach(el => {
+    this.elements.forEach(el => {
       if (!el.classList) {
         return;
       }

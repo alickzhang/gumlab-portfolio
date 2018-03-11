@@ -10,15 +10,19 @@ export default class Feature extends Component {
     title: PropTypes.string,
     images: PropTypes.array,
     path: PropTypes.string,
+    defaultSpeed: PropTypes.number
+  }
+
+  static defaultProps = {
+    defaultSpeed: 1
   }
 
   state = {
     animationRequest: null,
-    defaultSpeed: 1,
     speed: 1,
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.setState({
       animationRequest: window.requestAnimationFrame(this.scroll),
     });
@@ -57,7 +61,8 @@ export default class Feature extends Component {
 
   onMouseOut = (e) => {
     e.stopPropagation();
-    const { speed, defaultSpeed } = this.state;
+    const { defaultSpeed } = this.props;
+    const { speed } = this.state;
     this.setState({ speed: speed > 0 ? defaultSpeed : -defaultSpeed });
   }
 
