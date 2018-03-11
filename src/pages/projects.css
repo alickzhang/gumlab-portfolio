@@ -1,5 +1,6 @@
 .projects-layout {
   display: flex;
+  background: #fff;
 }
 
 .project-item {

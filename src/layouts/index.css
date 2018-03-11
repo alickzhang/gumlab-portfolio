@@ -82,6 +82,11 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
   display: block;
 }
 
+#start {
+  position: absolute;
+  top: 100vh;
+}
+
 a {
   background-color: transparent; /* Remove the gray background on active links in IE 10. */
   color: inherit;
@@ -143,11 +148,11 @@ h3 {
   h1 {
     font-size: 2.25rem;
   }
-  
+
   h2 {
     font-size: 1.75rem;
   }
-  
+
   h3 {
     font-size: 1.25rem;
   }
@@ -157,7 +162,7 @@ h3 {
   h1 {
     font-size: 2rem;
   }
-  
+
   h2 {
     font-size: 1.5rem;
   }

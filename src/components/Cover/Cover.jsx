@@ -21,10 +21,9 @@ export default class Cover extends Component {
     titleColor: '#fff',
   }
 
-  scrollDown = (e) => {
-    e.stopPropagation();
+  scrollDown = () => {
     const element = document.getElementById("start");
-    element.scrollIntoView({ behavior: "smooth", block: "start" });
+    element.scrollIntoView({ block: "start" });
   }
 
   render() {
@@ -43,7 +42,6 @@ export default class Cover extends Component {
             <i className="fa fa-arrow-down" />
           </button>
         </div>
-        <div id="start" />
       </Fragment>
     );
   }

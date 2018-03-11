@@ -27,9 +27,6 @@ export default class ProjectTemplate extends React.Component {
   }
 
   onScroll = () => {
-    if (window.scrollY + window.innerHeight >= document.body.offsetHeight) {
-      window.scroll(0, 0);
-    }
     this.elements.forEach(el => {
       if (!el.classList) {
         return;
@@ -40,11 +37,6 @@ export default class ProjectTemplate extends React.Component {
         el.classList.remove('visible');
       }
     });
-  }
-
-  scrollDown = () => {
-    const element = document.getElementById("start");
-    element.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   render() {

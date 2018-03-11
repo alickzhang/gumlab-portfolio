@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Helmet from "react-helmet";
 import "font-awesome/css/font-awesome.min.css";
-
 import ProjectListing from "../components/ProjectListing/ProjectListing";
 import SEO from "../components/SEO/SEO";
 import Cover from "../components/Cover/Cover";
@@ -11,26 +10,7 @@ import config from "../../data/SiteConfig";
 
 import "./index.css";
 
-class Index extends Component {
-
-  componentDidMount() {
-    document.addEventListener('scroll', this.onScroll);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('scroll', this.onScroll);
-  }
-
-  onScroll = () => {
-    if (window.scrollY + window.innerHeight >= document.body.offsetHeight) {
-      window.scroll(0, 0);
-    }
-  }
-
-  scrollDown = () => {
-    const element = document.getElementById("start");
-    element.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
+export default class Index extends Component {
 
   render() {
     const projectEdges = this.props.data.allMarkdownRemark.edges;
@@ -48,8 +28,6 @@ class Index extends Component {
     );
   }
 }
-
-export default Index;
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Link from "gatsby-link";
-
 import Feature from "../Feature/Feature";
 
 import "./ProjectListing.css";

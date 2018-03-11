@@ -35,7 +35,7 @@ export default class BackTop extends Component {
 
   backToTop = () => {
     const element = document.getElementById("start");
-    element.scrollIntoView({ behavior: "smooth", block: "start" });
+    element.scrollIntoView({ block: "start" });
   }
 
   render() {

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Helmet from "react-helmet";
-
 import Cover from "../components/Cover/Cover";
 import Footer from "../components/Footer/Footer";
 import BackTop from "../components/BackTop/BackTop";
@@ -9,11 +8,6 @@ import config from "../../data/SiteConfig";
 import "./projects.css";
 
 export default class Projects extends Component {
-
-  scrollDown = () => {
-    const element = document.getElementById("start");
-    element.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
 
   getProjectList() {
     const projectEdges = this.props.data.allMarkdownRemark.edges;
@@ -38,7 +32,7 @@ export default class Projects extends Component {
     return (
       <div className="projects-container">
         <Helmet title={`Projects | ${config.siteTitle}`} />
-        <Cover url={imgUrl} fadein />
+        <Cover url={imgUrl} fadein fixed />
         <div>
           <div className="projects-layout">
             {projectList.map(edge => (
@@ -51,6 +45,7 @@ export default class Projects extends Component {
           </div>
         </div>
         <Footer config={config} />
+        <Cover url={imgUrl} fixed />
         <BackTop />
       </div>
     );

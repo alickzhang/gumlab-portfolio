@@ -7,11 +7,22 @@ import "./index.css";
 
 export default class MainLayout extends React.Component {
 
-  constructor() {
-    super();
-    this.state = {
-      sidebarOpen: false,
-    };
+  state = {
+    sidebarOpen: false,
+  }
+
+  componentDidMount() {
+    document.addEventListener('scroll', this.onScroll);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('scroll', this.onScroll);
+  }
+
+  onScroll = () => {
+    if (window.scrollY + window.innerHeight >= document.body.offsetHeight) {
+      window.scroll(0, 0);
+    }
   }
 
   getLocalTitle() {
@@ -64,6 +75,7 @@ export default class MainLayout extends React.Component {
           <title>{`${config.siteTitle} |  ${this.getLocalTitle()}`}</title>
           <meta name="description" content={config.siteDescription} />
         </Helmet>
+        <div id="start" />
         <Header onSidebarOpen={this.onSidebarOpen} />
         <Sidebar open={sidebarOpen} onSidebarClose={this.onSidebarClose} />
         {children()}
