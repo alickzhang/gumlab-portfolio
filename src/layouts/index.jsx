@@ -75,7 +75,6 @@ export default class MainLayout extends React.Component {
           <title>{`${config.siteTitle} |  ${this.getLocalTitle()}`}</title>
           <meta name="description" content={config.siteDescription} />
         </Helmet>
-        <div id="start" />
         <Header onSidebarOpen={this.onSidebarOpen} />
         <Sidebar open={sidebarOpen} onSidebarClose={this.onSidebarClose} />
         {children()}

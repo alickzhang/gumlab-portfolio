@@ -82,11 +82,6 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
   display: block;
 }
 
-#start {
-  position: absolute;
-  top: 100vh;
-}
-
 a {
   background-color: transparent; /* Remove the gray background on active links in IE 10. */
   color: inherit;
