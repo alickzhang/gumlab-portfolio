@@ -21,7 +21,7 @@ export default class Feature extends Component {
     speed: 1,
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.animationRequest = window.requestAnimationFrame(this.scroll);
   }
 
