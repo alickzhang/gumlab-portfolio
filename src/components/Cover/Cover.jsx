@@ -13,13 +13,13 @@ export default class Cover extends Component {
     fadein: PropTypes.bool,
     fixed: PropTypes.bool,
     title: PropTypes.string,
-    titleColor: PropTypes.string,
+    titleColor: PropTypes.string
   }
 
   static defaultProps = {
     fadein: false,
     fixed: false,
-    titleColor: '#fff',
+    titleColor: '#fff'
   }
 
   render() {

@@ -10,15 +10,15 @@ export default class Feature extends Component {
     title: PropTypes.string,
     images: PropTypes.array,
     path: PropTypes.string,
-    defaultSpeed: PropTypes.number,
+    defaultSpeed: PropTypes.number
   }
 
   static defaultProps = {
-    defaultSpeed: 1,
+    defaultSpeed: 1
   }
 
   state = {
-    speed: 1,
+    speed: 1
   }
 
   componentDidMount() {

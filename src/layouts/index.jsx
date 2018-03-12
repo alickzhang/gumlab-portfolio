@@ -8,7 +8,7 @@ import "./index.css";
 export default class MainLayout extends React.Component {
 
   state = {
-    sidebarOpen: false,
+    sidebarOpen: false
   }
 
   componentDidMount() {

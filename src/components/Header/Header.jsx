@@ -8,16 +8,16 @@ export default class Header extends Component {
 
   static propTypes = {
     color: PropTypes.string,
-    background: PropTypes.string,
+    background: PropTypes.string
   }
 
   static defaultProps = {
     color: 'rgba(0, 0, 0, .75)',
-    background: '#fff',
+    background: '#fff'
   }
 
   state = {
-    isTop: true,
+    isTop: true
   }
 
   componentDidMount() {
@@ -39,7 +39,7 @@ export default class Header extends Component {
     const { color, background } = this.props;
     const { isTop } = this.state;
     return (
-      <div className="header" style={{ color: color, background: background }}>
+      <div className="header" style={{ color, background }}>
         <div className="header-brand"><Link to="/">Gumlab</Link></div>
         <nav className="header-links">
           <Link to="/projects">Projects</Link>
