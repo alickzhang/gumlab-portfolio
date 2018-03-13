@@ -1,10 +1,11 @@
+/* eslint jsx-a11y/anchor-is-valid: "off" */
 import React, { Component } from "react";
 import Link from "gatsby-link";
 import Feature from "../Feature/Feature";
 
-import "./ProjectListing.css";
+import "./FeaturedProjectList.css";
 
-class ProjectListing extends Component {
+class FeaturedProjectList extends Component {
 
   getProjectList() {
     const projectList = [];
@@ -40,4 +41,4 @@ class ProjectListing extends Component {
   }
 }
 
-export default ProjectListing;
+export default FeaturedProjectList;

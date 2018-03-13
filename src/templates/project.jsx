@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import Helmet from "react-helmet";
 import ProjectTags from "../components/ProjectTags/ProjectTags";
 import SEO from "../components/SEO/SEO";
@@ -10,7 +10,7 @@ import config from "../../data/SiteConfig";
 
 import "./project.css";
 
-export default class ProjectTemplate extends React.Component {
+export default class ProjectTemplate extends Component {
 
   componentDidMount() {
     document.addEventListener('scroll', this.onScroll);
@@ -51,9 +51,6 @@ export default class ProjectTemplate extends React.Component {
     if (!project.id) {
       project.id = slug;
     }
-    if (!project.category_id) {
-      project.category_id = config.projectDefaultCategoryID;
-    }
     return (
       <div>
         <Helmet>
@@ -93,7 +90,6 @@ export const pageQuery = graphql`
           }
         }
         date
-        category
         tags
         color
         background

@@ -1,3 +1,4 @@
+/* eslint jsx-a11y/anchor-is-valid: "off" */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Link from "gatsby-link";

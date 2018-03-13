@@ -28,11 +28,13 @@ export default class Cover extends Component {
     return (
       <Fragment>
         <div className="cover">
-          {
-            sizes
-            ? <Img sizes={sizes} fadeIn={fadein} className={coverClass} />
-            : <div className={coverClass} style={{ backgroundImage: `url(${url}` }} />
-          }
+          <div className="cover-img-container">
+            {
+              sizes
+              ? <Img sizes={sizes} fadeIn={fadein} className={coverClass} />
+              : <div className={coverClass} style={{ backgroundImage: `url(${url}` }} />
+            }
+          </div>
           {title && <div className="cover-title" style={{ color: titleColor }}>{title}</div>}
           <button className="down" onClick={() => scrollYTo(window.innerHeight)} style={{ color: titleColor }}>
             <i className="fa fa-arrow-down" />

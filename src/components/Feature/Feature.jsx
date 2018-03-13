@@ -1,3 +1,4 @@
+/* eslint jsx-a11y/anchor-is-valid: "off" */
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import Link from "gatsby-link";
@@ -29,22 +30,11 @@ export default class Feature extends Component {
     window.cancelAnimationFrame(this.animationRequest);
   }
 
-  scroll = () => {
+  onMouseOut = (e) => {
+    e.stopPropagation();
+    const { defaultSpeed } = this.props;
     const { speed } = this.state;
-    if (speed < 0) {
-      if (this.feature.scrollLeft === 0) {
-        this.feature.scrollLeft = this.feature.scrollWidth / 3;
-      } else {
-        this.feature.scrollLeft += speed;
-      }
-    } else {
-      if (this.feature.scrollLeft >= this.feature.scrollWidth / 3) {
-        this.feature.scrollLeft = 0;
-      } else {
-        this.feature.scrollLeft += speed;
-      }
-    }
-    this.animationRequest = window.requestAnimationFrame(this.scroll);
+    this.setState({ speed: speed > 0 ? defaultSpeed : -defaultSpeed });
   }
 
   hover = (e) => {
@@ -54,11 +44,20 @@ export default class Feature extends Component {
     this.setState({ speed });
   }
 
-  onMouseOut = (e) => {
-    e.stopPropagation();
-    const { defaultSpeed } = this.props;
+  scroll = () => {
     const { speed } = this.state;
-    this.setState({ speed: speed > 0 ? defaultSpeed : -defaultSpeed });
+    if (speed < 0) {
+      if (this.feature.scrollLeft === 0) {
+        this.feature.scrollLeft = this.feature.scrollWidth / 3;
+      } else {
+        this.feature.scrollLeft += speed;
+      }
+    } else if (this.feature.scrollLeft >= this.feature.scrollWidth / 3) {
+      this.feature.scrollLeft = 0;
+    } else {
+      this.feature.scrollLeft += speed;
+    }
+    this.animationRequest = window.requestAnimationFrame(this.scroll);
   }
 
   render() {
@@ -69,10 +68,10 @@ export default class Feature extends Component {
           <div className="title">{title}</div>
           <span className="link">Read More</span>
         </div>
-        {images.map(item =>
+        {images.map(item => (
           <figure key={item.childImageSharp.sizes.src} className="feature-img">
             <img srcSet={item.childImageSharp.sizes.srcSet} alt={title} />
-          </figure>
+          </figure>)
         )}
       </Fragment>
     );

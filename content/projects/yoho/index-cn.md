@@ -1,6 +1,6 @@
 ---
 title: "YOHO | Futura"
-cover: "./assets/cover.jpg"
+cover: "./assets/f1617060092291.5a3c9b25233d2.jpg"
 category: "Animation"
 date: "21/12/2017"
 featured: true

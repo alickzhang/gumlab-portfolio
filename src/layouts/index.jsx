@@ -1,11 +1,11 @@
-import React from "react";
+import React, { Component } from "react";
 import Helmet from "react-helmet";
 import config from "../../data/SiteConfig";
 import Header from "../components/Header/Header";
 import Sidebar from "../components/Sidebar/Sidebar";
 import "./index.css";
 
-export default class MainLayout extends React.Component {
+export default class MainLayout extends Component {
 
   state = {
     sidebarOpen: false
@@ -23,6 +23,14 @@ export default class MainLayout extends React.Component {
     if (window.scrollY + window.innerHeight >= document.body.offsetHeight) {
       window.scroll(0, 0);
     }
+  }
+
+  onSidebarOpen = () => {
+    this.setState({ sidebarOpen: true });
+  }
+
+  onSidebarClose = () => {
+    this.setState({ sidebarOpen: false });
   }
 
   getLocalTitle() {
@@ -56,14 +64,6 @@ export default class MainLayout extends React.Component {
       title = `${capitalize(category)}`;
     }
     return title;
-  }
-
-  onSidebarOpen = () => {
-    this.setState({ sidebarOpen: true });
-  }
-
-  onSidebarClose = () => {
-    this.setState({ sidebarOpen: false });
   }
 
   render() {

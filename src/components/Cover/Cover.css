@@ -4,19 +4,17 @@
   height: 100vh;
 }
 
-.gatsby-image-outer-wrapper {
-  width: 100%;
-  height: 100%;
-  z-index: -1 !important;
+.cover-img-container {
+  position: relative;
+  z-index: -1;
 }
 
 .cover-img {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50%;
-  z-index: -1;
 }
 
 .cover-img.fadein {

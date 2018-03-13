@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 import Helmet from "react-helmet";
 import "font-awesome/css/font-awesome.min.css";
-import ProjectListing from "../components/ProjectListing/ProjectListing";
+import FeaturedProjectList from "../components/FeaturedProjectList/FeaturedProjectList";
 import SEO from "../components/SEO/SEO";
 import Cover from "../components/Cover/Cover";
 import Footer from "../components/Footer/Footer";
 import BackTop from "../components/BackTop/BackTop";
 import config from "../../data/SiteConfig";
-
-import "./index.css";
 
 export default class Index extends Component {
 
@@ -20,7 +18,7 @@ export default class Index extends Component {
         <Helmet title={config.siteTitle} />
         <SEO projectEdges={projectEdges} />
         <Cover url={imgUrl} fixed />
-        <ProjectListing projectEdges={projectEdges} />
+        <FeaturedProjectList projectEdges={projectEdges} />
         <Footer config={config} />
         <Cover url={imgUrl} fixed />
         <BackTop />

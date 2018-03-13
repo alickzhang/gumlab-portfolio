@@ -1,49 +1,21 @@
 import React, { Component } from "react";
 import Helmet from "react-helmet";
 import Cover from "../components/Cover/Cover";
+import ProjectList from "../components/ProjectList/ProjectList";
 import Footer from "../components/Footer/Footer";
 import BackTop from "../components/BackTop/BackTop";
 import config from "../../data/SiteConfig";
 
-import "./projects.css";
-
 export default class Projects extends Component {
 
-  getProjectList() {
-    const projectEdges = this.props.data.allMarkdownRemark.edges;
-    const projectList = [];
-    projectEdges.forEach(({ node }) => {
-      projectList.push({
-        path: `projects${node.fields.slug}`,
-        tags: node.frontmatter.tags,
-        cover: node.frontmatter.cover,
-        title: node.frontmatter.title,
-        date: node.frontmatter.date,
-        excerpt: node.excerpt,
-        timeToRead: node.timeToRead
-      });
-    });
-    return projectList;
-  }
-
   render() {
-    const projectList = this.getProjectList();
+    const projectEdges = this.props.data.allMarkdownRemark.edges;
     const imgUrl = "http://images.contentful.com/uftyz5b3faoy/1mOIOmBwNa2o4iQukgmgoA/75202a71efece6a6762fc2b4439fe95b/BaillatSite_HeroImage_Template2.jpg";
     return (
       <div className="projects-container">
         <Helmet title={`Projects | ${config.siteTitle}`} />
         <Cover url={imgUrl} fadein fixed />
-        <div>
-          <div className="projects-layout">
-            {projectList.map(edge => (
-              <div className="project-item">
-                <div className="cover-img" style={{ backgroundImage: `url(${edge.cover}`, backgroundSize: 'contain' }}>
-                  <img srcSet={edge.cover.childImageSharp.sizes.srcSet} alt="cover" style={{ visibility: 'hidden' }} />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        <ProjectList projectEdges={projectEdges} />
         <Footer config={config} />
         <Cover url={imgUrl} fixed />
         <BackTop />
@@ -84,4 +56,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-

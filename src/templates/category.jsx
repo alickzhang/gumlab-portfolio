@@ -1,18 +1,15 @@
-import React from "react";
+import React, { Component } from "react";
 import Helmet from "react-helmet";
-import ProjectListing from "../components/ProjectListing/ProjectListing";
 import config from "../../data/SiteConfig";
 
-export default class CategoryTemplate extends React.Component {
+export default class CategoryTemplate extends Component {
   render() {
-    const category = this.props.pathContext.category;
-    const projectEdges = this.props.data.allMarkdownRemark.edges;
+    const { category } = this.props.pathContext;
     return (
       <div className="category-container">
         <Helmet
           title={`Projects in category "${category}" | ${config.siteTitle}`}
         />
-        <ProjectListing projectEdges={projectEdges} />
       </div>
     );
   }
