@@ -39,8 +39,7 @@ module.exports = {
           },
           "gatsby-remark-responsive-iframe",
           "gatsby-remark-prismjs",
-          "gatsby-remark-copy-linked-files",
-          "gatsby-remark-autolink-headers"
+          "gatsby-remark-copy-linked-files"
         ]
       }
     },
@@ -91,7 +90,6 @@ module.exports = {
         setup(ref) {
           const ret = ref.query.site.siteMetadata.rssMetadata;
           ret.allMarkdownRemark = ref.query.allMarkdownRemark;
-          ret.generator = "GatsbyJS Material Starter";
           return ret;
         },
         query: `
