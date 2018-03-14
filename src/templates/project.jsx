@@ -43,11 +43,7 @@ export default class ProjectTemplate extends Component {
     const { slug } = this.props.pathContext;
     const projectNode = this.props.data.markdownRemark;
     const project = projectNode.frontmatter;
-    let coverSizes = null;
-    if (project.cover && project.cover.childImageSharp) {
-      coverSizes = project.cover.childImageSharp.sizes;
-    }
-    const coverUrl = !coverSizes ? project.cover : null;
+    const { cover } = project;
     if (!project.id) {
       project.id = slug;
     }
@@ -57,7 +53,7 @@ export default class ProjectTemplate extends Component {
           <title>{`${project.title} | ${config.siteTitle}`}</title>
         </Helmet>
         <SEO projectPath={slug} projectNode={projectNode} projectSEO />
-        <Cover url={coverUrl} sizes={coverSizes} fadein fixed title={project.title} titleColor={project.titleColor} />
+        <Cover cover={cover} fadein fixed title={project.title} titleColor={project.titleColor} />
         <Header color={project.color} background={project.background} />
         <div className="project-container" style={{ color: project.color, background: project.background }}>
           <div className="project-content" dangerouslySetInnerHTML={{ __html: projectNode.html }} />
@@ -66,7 +62,7 @@ export default class ProjectTemplate extends Component {
           </div>
         </div>
         <Footer config={config} />
-        <Cover url={coverUrl} sizes={coverSizes} fixed title={project.title} titleColor={project.titleColor} />
+        <Cover cover={cover} fixed title={project.title} titleColor={project.titleColor} />
         <BackTop color={project.color} />
       </div>
     );

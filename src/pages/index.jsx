@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import Helmet from "react-helmet";
 import "font-awesome/css/font-awesome.min.css";
 import FeaturedProjectList from "../components/FeaturedProjectList/FeaturedProjectList";
@@ -10,18 +10,40 @@ import config from "../../data/SiteConfig";
 
 export default class Index extends Component {
 
+  state = {
+    cover: null,
+    loaded: false,
+    loading: false
+  }
+
+  componentWillMount() {
+    const projectEdges = this.props.data.allMarkdownRemark.edges;
+    const randomEdge = projectEdges[Math.floor(Math.random() * projectEdges.length)];
+    const { cover } = randomEdge.node.frontmatter;
+    this.setState({ cover, loading: true });
+  }
+
+  onLoad = () => {
+    this.setState({ loaded: true, loading: false });
+  }
+
   render() {
     const projectEdges = this.props.data.allMarkdownRemark.edges;
-    const imgUrl = "http://images.contentful.com/uftyz5b3faoy/1mOIOmBwNa2o4iQukgmgoA/75202a71efece6a6762fc2b4439fe95b/BaillatSite_HeroImage_Template2.jpg";
+    const { cover, loaded, loading } = this.state;
     return (
       <div className="index-container">
         <Helmet title={config.siteTitle} />
         <SEO projectEdges={projectEdges} />
-        <Cover url={imgUrl} fixed />
-        <FeaturedProjectList projectEdges={projectEdges} />
-        <Footer config={config} />
-        <Cover url={imgUrl} fixed />
-        <BackTop />
+        <Cover cover={cover} fixed loading={loading} onLoad={this.onLoad} />
+        {
+          loaded &&
+          <Fragment>
+            <FeaturedProjectList projectEdges={projectEdges} />
+            <Footer config={config} />
+            <Cover cover={cover} fixed />
+            <BackTop />
+          </Fragment>
+        }
       </div>
     );
   }

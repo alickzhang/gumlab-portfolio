@@ -8,17 +8,28 @@ import config from "../../data/SiteConfig";
 
 export default class TagTemplate extends Component {
 
+  state = {
+    cover: null
+  }
+
+  componentWillMount() {
+    const projectEdges = this.props.data.allMarkdownRemark.edges;
+    const randomEdge = projectEdges[Math.floor(Math.random() * projectEdges.length)];
+    const { cover } = randomEdge.node.frontmatter;
+    this.setState({ cover });
+  }
+
   render() {
     const projectEdges = this.props.data.allMarkdownRemark.edges;
     const { tag } = this.props.pathContext;
-    const imgUrl = "http://images.contentful.com/uftyz5b3faoy/1mOIOmBwNa2o4iQukgmgoA/75202a71efece6a6762fc2b4439fe95b/BaillatSite_HeroImage_Template2.jpg";
+    const { cover } = this.state;
     return (
       <div className="tag-container">
         <Helmet title={`Projects tagged as "${tag}" | ${config.siteTitle}`} />
-        <Cover url={imgUrl} fixed title={`#${tag}`} />
+        <Cover cover={cover} fadein fixed title={`#${tag}`} />
         <ProjectList projectEdges={projectEdges} />
         <Footer config={config} />
-        <Cover url={imgUrl} fixed title={`#${tag}`} />
+        <Cover cover={cover} fixed title={`#${tag}`} />
         <BackTop />
       </div>
     );

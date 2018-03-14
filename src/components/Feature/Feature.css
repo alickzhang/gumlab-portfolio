@@ -1,9 +1,9 @@
 .feature {
   position: relative;
   width: 100%;
-  height: 50vh;
+  height: 40vw;
   max-height: 800px;
-  margin: .75rem auto;
+  margin: 1.5rem 0;
   overflow: hidden;
   cursor: pointer;
 }
@@ -14,7 +14,7 @@
   left: 0;
   width: auto;
   height: 100%;
-  padding: 1.5rem 0;
+  padding: 2.25rem 0;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -23,57 +23,77 @@
 }
 
 .feature-text {
-  width: 15em;
+  width: 50vw;
   height: auto;
-  padding: 0 1.5rem;
-  font-size: 6vw;
+  padding: 0 3rem;
   line-height: 1.5;
   text-align: center;
 }
 
 .feature-text .title {
   color: rgba(0, 0, 0, .75);
+  font-size: 72px;
   text-transform: uppercase;
 }
 
 .feature-text .link {
   color: #979797;
-  font-size: 0.875rem;
+  font-size: 24px;
   border-bottom: 1px solid #979797;
 }
 
 .feature-img {
-  width: auto;
+  width: 50vw;
   height: 100%;
 }
 
-.feature-img img {
-  width: auto;
+.gatsby-image-outer-wrapper,
+.gatsby-image-wrapper {
+  width: 100%;
   height: 100%;
 }
 
-@media (min-width: 768px) {
-  .feature {
-    height: 40vw;
-    margin: 1.5rem 0;
-  }
-
-  .feature-wrapper {
-    padding: 2.25rem 0;
-  }
-
-  .feature-text {
-    padding: 0 3rem;
-    font-size: 3.5vw;
-  }
-}
-
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   .feature-text .title {
-    font-size: 72px;
+    font-size: 3.5vw;
   }
 
   .feature-text .link {
-    font-size: 24px;
+    font-size: .875rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .feature {
+    height: 50vh;
+    margin: .75rem 0;
+  }
+
+  .feature-wrapper {
+    padding: 1.5rem 0;
+  }
+
+  .feature-img {
+    width: 65vh;
+  }
+
+  .feature-text {
+    width: 65vh;
+    padding: 0 1.5rem;
+  }
+
+  .feature-text .title {
+    font-size: 5vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .feature-img,
+  .feature-text {
+    width: 50vh;
+  }
+
+  .feature-text .title {
+    font-size: 6.5vw;
   }
 }

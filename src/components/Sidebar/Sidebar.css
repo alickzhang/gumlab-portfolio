@@ -4,7 +4,7 @@
   left: 0;
   height: 100vh;
   background-color: rgba(0, 0, 0, .8);
-  transition: transform .3s ease;
+  transition: transform .3s ease-out;
   z-index: 99;
 }
 

@@ -1,6 +1,6 @@
 .project-container {
   width: 100%;
-  padding: 5rem .75rem 0;
+  padding: 5rem 10vw 0;
 }
 
 .project-container img {
@@ -18,12 +18,12 @@
   color: inherit !important;
   opacity: 0;
   transform: translateY(4vh);
-  transition: all .2s ease-in-out;
+  transition: all .2s ease-out;
 }
 
 .project-section img {
   transform: scale(1.03);
-  transition: transform .2s ease-in-out;
+  transition: transform .2s ease-out;
 }
 
 .project-section.visible {
@@ -48,8 +48,8 @@
   padding: 2rem 0 4rem;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .project-container {
-    padding: 5rem 10vw 0;
+    padding: 5rem .75rem 0;
   }
 }

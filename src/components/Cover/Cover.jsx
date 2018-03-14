@@ -8,36 +8,38 @@ import "./Cover.css";
 export default class Cover extends Component {
 
   static propTypes = {
-    url: PropTypes.string,
-    sizes: PropTypes.object,
+    cover: PropTypes.object,
     fadein: PropTypes.bool,
     fixed: PropTypes.bool,
     title: PropTypes.string,
-    titleColor: PropTypes.string
+    titleColor: PropTypes.string,
+    loading: PropTypes.bool,
+    onLoad: PropTypes.func
   }
 
   static defaultProps = {
     fadein: false,
     fixed: false,
-    titleColor: '#fff'
+    titleColor: '#fff',
+    loading: false
   }
 
   render() {
-    const { url, sizes, fadein, fixed, title, titleColor } = this.props;
+    const { cover, fadein, fixed, title, titleColor, loading } = this.props;
+    let sizes = null;
+    if (cover && cover.childImageSharp) {
+      sizes = cover.childImageSharp.sizes;
+    }
     const coverClass = classNames('cover-img', { fadein, fixed });
     return (
       <Fragment>
         <div className="cover">
           <div className="cover-img-container">
-            {
-              sizes
-              ? <Img sizes={sizes} fadeIn={fadein} className={coverClass} />
-              : <div className={coverClass} style={{ backgroundImage: `url(${url}` }} />
-            }
+            <Img sizes={sizes} fadeIn={fadein} className={coverClass} onLoad={this.props.onLoad} />
           </div>
           {title && <div className="cover-title" style={{ color: titleColor }}>{title}</div>}
           <button className="down" onClick={() => scrollYTo(window.innerHeight)} style={{ color: titleColor }}>
-            <i className="fa fa-arrow-down" />
+            {loading ? <i className="fa fa-spinner loading" /> : <i className="fa fa-arrow-down" />}
           </button>
         </div>
       </Fragment>

@@ -41,11 +41,12 @@ export default class Header extends Component {
     const { isTop } = this.state;
     return (
       <div className="header" style={{ color, background }}>
-        <div className="header-brand"><Link to="/">Gumlab</Link></div>
+        <div className="header-brand">
+          <Link to="/">Gumlab</Link>
+        </div>
         <nav className="header-links">
           <Link to="/projects">Projects</Link>
-          <Link to="/">Studios</Link>
-          <Link to="/about">Infos</Link>
+          <Link to="/about">About</Link>
         </nav>
         {/*<div className={isTop ? "bars" : "bars dark"} onClick={this.props.onSidebarOpen}><i className="fa fa-bars" /></div>*/}
       </div>

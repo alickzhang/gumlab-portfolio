@@ -1,7 +1,7 @@
 .project-tag {
   font-size: 1rem;
   margin-right: 1rem;
-  transition: opacity linear 150ms;
+  transition: opacity .15s ease-out;
 }
 
 .project-tag:hover {

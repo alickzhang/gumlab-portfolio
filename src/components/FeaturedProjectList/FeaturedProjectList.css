@@ -13,18 +13,24 @@
 
 .view-all-text a {
   padding: 1rem 2rem;
-  font-size: 6vw;
+  font-size: 72px;
   border-bottom: 1px solid #979797;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 1200px) {
   .view-all-text a {
     font-size: 3.5vw;
   }
 }
 
-@media (min-width: 1200px) {
+@media (max-width: 768px) {
   .view-all-text a {
-    font-size: 72px;
+    font-size: 5vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .view-all-text a {
+    font-size: 6.5vw;
   }
 }

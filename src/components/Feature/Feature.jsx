@@ -2,6 +2,7 @@
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import Link from "gatsby-link";
+import Img from "gatsby-image";
 
 import "./Feature.css";
 
@@ -70,7 +71,7 @@ export default class Feature extends Component {
         </div>
         {images.map(item => (
           <figure key={item.childImageSharp.sizes.src} className="feature-img">
-            <img srcSet={item.childImageSharp.sizes.srcSet} alt={title} />
+            <Img sizes={item.childImageSharp.sizes} />
           </figure>)
         )}
       </Fragment>

@@ -59,11 +59,26 @@
   cursor: pointer;
 }
 
+.loading {
+  color: #fff;
+  font-size: 36px !important;
+  animation: spin 2s infinite linear;
+}
+
 @keyframes fadein {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
