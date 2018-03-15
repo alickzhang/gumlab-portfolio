@@ -25,9 +25,9 @@ featuredImages: [
   mozallowfullscreen
   allowfullscreen></iframe>
 
-# Vuly is the leader of high end trampolines in Australia. Marketing for children's products commonly have the same look and feel - hyped up energy and making use of every colour in existence. Our task was to create product videos like nothing seen in this sector before. Selecting a trampoline is just as important to adults as it is children. At the end of the day this "toy" is going to be a feature of their home - safety and fun have to meet design.
+## Vuly is the leader of high end trampolines in Australia. Marketing for children's products commonly have the same look and feel - hyped up energy and making use of every colour in existence. Our task was to create product videos like nothing seen in this sector before. Selecting a trampoline is just as important to adults as it is children. At the end of the day this "toy" is going to be a feature of their home - safety and fun have to meet design.
 
-# Super high speed video capture, clean yet bold art direction, and animation to achieve detail otherwise impossible. These are the three elements that from conception were crucial to making the end product we wanted.
+## Super high speed video capture, clean yet bold art direction, and animation to achieve detail otherwise impossible. These are the three elements that from conception were crucial to making the end product we wanted.
 
 ![](./assets/78698a60864777.5a5c42571fa3e.png)
 

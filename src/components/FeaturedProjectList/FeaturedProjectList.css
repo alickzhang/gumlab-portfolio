@@ -4,20 +4,22 @@
 }
 
 .view-all-text {
-  padding: 1rem 0 4rem 0;
-  color: rgba(0, 0, 0, .75);
-  line-height: 1.5;
+  padding-bottom: 8rem;
   text-align: center;
   text-transform: uppercase;
 }
 
 .view-all-text a {
-  padding: 1rem 2rem;
+  padding: .5rem 0;
   font-size: 72px;
-  border-bottom: 1px solid #979797;
+  border-bottom: 2px solid #ccc;
 }
 
 @media (max-width: 1200px) {
+  .view-all-text {
+    padding-bottom: 4rem;
+  }
+  
   .view-all-text a {
     font-size: 3.5vw;
   }

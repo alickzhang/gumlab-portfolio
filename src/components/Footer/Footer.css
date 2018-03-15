@@ -1,8 +1,7 @@
 .footer {
   background: #e0e0e0;
-  color: rgba(0, 0, 0, .75);
   font-size: 1.8rem;
-  padding: 3rem 10vw 2rem;
+  padding: 3rem 10vw 4rem;
 }
 
 .footer .columns {
@@ -42,14 +41,14 @@
 @media (max-width: 960px) {
   .footer {
     font-size: 1.25rem;
-    padding: 1.25rem 10vw 2.5rem;
+    padding: 1.25rem 10vw 3.5rem;
   }
 }
 
 @media (max-width: 768px) {
   .footer {
     font-size: 1rem;
-    padding: 1rem 10vw 1.5rem;
+    padding: 1rem 10vw 2.5rem;
   }
 
   .copyright {
@@ -60,7 +59,7 @@
 @media (max-width: 580px) {
   .footer {
     font-size: 1.2rem;
-    padding: 1rem 8vw 2rem;
+    padding: 1rem 8vw 2.5rem;
   }
 
   .footer .columns {
