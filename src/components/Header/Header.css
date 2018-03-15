@@ -6,12 +6,19 @@
   padding: 1rem;
   line-height: 3rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .header-brand {
-  margin: 0;
-  font-size: 2rem;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 100;
+}
+
+.header-brand img {
+  width: 56px;
+  height: 56px;
 }
 
 .header-links {
