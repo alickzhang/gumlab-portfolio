@@ -1,5 +1,5 @@
 /* eslint jsx-a11y/anchor-is-valid: "off" */
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Link from "gatsby-link";
 import Img from "gatsby-image";
@@ -21,6 +21,11 @@ export default class Feature extends Component {
 
   state = {
     speed: 1
+  }
+
+  componentWillMount() {
+    const { images } = this.props;
+    this.random = Math.floor(Math.random() * images.length);
   }
 
   componentDidMount() {
@@ -63,18 +68,16 @@ export default class Feature extends Component {
 
   render() {
     const { title, images, path } = this.props;
-    const featureEl = (
-      <Fragment>
-        <div className="feature-text">
-          <div className="title"><p>{title}</p></div>
-          <span className="link">Read More</span>
-        </div>
-        {images.map(item => (
-          <figure key={item.childImageSharp.sizes.src} className="feature-img">
-            <Img sizes={item.childImageSharp.sizes} />
-          </figure>)
-        )}
-      </Fragment>
+    const featureEl = images.map(item => (
+      <figure key={item.childImageSharp.sizes.src} className="feature-img">
+        <Img sizes={item.childImageSharp.sizes} />
+      </figure>
+    ));
+    featureEl.splice(this.random, 1,
+      <div key="title" className="feature-text">
+        <div className="title"><p>{title}</p></div>
+        <span className="link">Read More</span>
+      </div>
     );
 
     return (
