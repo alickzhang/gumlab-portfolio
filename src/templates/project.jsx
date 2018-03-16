@@ -50,7 +50,7 @@ export default class ProjectTemplate extends Component {
     return (
       <div>
         <Helmet>
-          <title>{`${project.title} | ${config.siteTitle}`}</title>
+          <title>{`${project.title} by Gumlab`}</title>
         </Helmet>
         <SEO projectPath={slug} projectNode={projectNode} projectSEO />
         <Cover cover={cover} fadein fixed title={project.title} titleColor={project.titleColor} />
