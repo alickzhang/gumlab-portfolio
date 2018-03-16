@@ -1,9 +1,12 @@
+/* eslint jsx-a11y/anchor-is-valid: "off" */
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import Link from "gatsby-link";
 import Img from "gatsby-image";
 import scrollYTo from "../../shared/scrollBehaviour";
 import "./Cover.css";
+import logo from "./images/logo_white.png";
 
 export default class Cover extends Component {
 
@@ -36,6 +39,9 @@ export default class Cover extends Component {
         <div className="cover">
           <div className="cover-img-container">
             <Img sizes={sizes} fadeIn={fadein} className={coverClass} onLoad={this.props.onLoad} />
+          </div>
+          <div className="logo">
+            <Link to="/"><img src={logo} alt="logo" /></Link>
           </div>
           {title && <div className="cover-title" style={{ color: titleColor }}>{title}</div>}
           <button className="down" onClick={() => scrollYTo(window.innerHeight)} style={{ color: titleColor }}>

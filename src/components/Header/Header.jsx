@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import Link from "gatsby-link";
 import PropTypes from "prop-types";
 import "./Header.css";
-import logo from "./images/logo.png";
 
 export default class Header extends Component {
 
@@ -18,8 +17,7 @@ export default class Header extends Component {
   }
 
   state = {
-    isTop: true,
-    rotate: 0
+    isTop: true
   }
 
   componentDidMount() {
@@ -35,23 +33,16 @@ export default class Header extends Component {
     if (isTop !== this.state.isTop) {
       this.setState({ isTop });
     }
-    const rotate = `${window.scrollY / 10 % 360}deg`;
-    this.setState({ rotate });
   }
 
   render() {
     const { color, background } = this.props;
-    const { isTop, rotate } = this.state;
     return (
       <div className="header" style={{ color, background }}>
-        <div className="header-brand" style={{ transform: `rotate(${rotate})` }}>
-          <Link to="/"><img src={logo} alt="logo" /></Link>
-        </div>
         <nav className="header-links">
           <Link to="/projects">Projects</Link>
           <Link to="/about">About</Link>
         </nav>
-        {/*<div className={isTop ? "bars" : "bars dark"} onClick={this.props.onSidebarOpen}><i className="fa fa-bars" /></div>*/}
       </div>
     );
   }
