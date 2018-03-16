@@ -4,7 +4,7 @@ cover: "./assets/f1617060092291.5a3c9b25233d2.jpg"
 category: "Animation"
 date: "21/12/2017"
 featured: true
-color: "#696969"
+color: "#fff"
 background: "#000"
 titleColor: "#fff"
 tags:
