@@ -13,7 +13,6 @@ module.exports = {
   userLocation: "Melbourne, Australia", // User location to display in the author segment.
   userAvatar: "https://media-exp2.licdn.com/media/AAEAAQAAAAAAAALgAAAAJDE1NWMyMjcwLTAyMjItNDQzNy04NjU4LWMwZjIyZTNjNzc4MA.jpg", // User avatar to display in the author segment.
   userDescription: "", // User description to display in the author segment.
-  // Links to social profiles/projects you want to display in the author segment/navigation bar.
   userLinks: [
     {
       label: "Twitter",
@@ -21,6 +20,7 @@ module.exports = {
       iconClassName: "fa fa-twitter"
     }
   ],
+  userTwitter: "@WEN__SHI",
   copyright: "Copyright © 2018. Gumlab", // Copyright string for the footer of the website and RSS feed.
   themeColor: "#c62828", // Used for setting manifest and progress theme colors.
   backgroundColor: "#e0e0e0" // Used for setting manifest background color.

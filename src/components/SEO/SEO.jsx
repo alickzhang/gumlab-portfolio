@@ -11,20 +11,19 @@ class SEO extends Component {
     let projectURL;
     if (projectSEO) {
       const projectMeta = projectNode.frontmatter;
-      title = projectMeta.title;
+      ({ title } = projectMeta);
       description = projectMeta.description
         ? projectMeta.description
         : projectNode.excerpt;
-      image = projectMeta.cover;
-      projectURL = config.siteUrl + config.pathPrefix + projectPath;
+      image = projectMeta.cover.childImageSharp.sizes.src;
+      projectURL = `${config.siteUrl}/projects${projectPath}`;
     } else {
       title = config.siteTitle;
       description = config.siteDescription;
       image = config.siteLogo;
     }
-    const realPrefix = config.pathPrefix === "/" ? "" : config.pathPrefix;
-    image = config.siteUrl + realPrefix + image;
-    const portfolioURL = config.siteUrl + config.pathPrefix;
+    image = `${config.siteUrl}${image}`;
+    const portfolioURL = config.siteUrl;
     const schemaOrgJSONLD = [
       {
         "@context": "http://schema.org",
@@ -80,10 +79,6 @@ class SEO extends Component {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={image} />
-        <meta
-          property="fb:app_id"
-          content={config.siteFBAppID ? config.siteFBAppID : ""}
-        />
 
         {/* Twitter Card tags */}
         <meta name="twitter:card" content="summary_large_image" />

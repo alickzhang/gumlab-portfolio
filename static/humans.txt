@@ -1,0 +1,8 @@
+/* ARTISANS */
+Developer: Nathan Fang
+Github: @nfang
+Location: Melbourne, Australia
+
+Developer: Alick Zhang
+Github: @alickzhang
+Location: Melbourne, Australia
