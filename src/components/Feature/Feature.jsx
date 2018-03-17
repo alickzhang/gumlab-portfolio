@@ -24,8 +24,20 @@ export default class Feature extends Component {
   }
 
   componentWillMount() {
-    const { images } = this.props;
-    this.random = Math.floor(Math.random() * images.length);
+    const { title, images } = this.props;
+    const random = Math.floor(Math.random() * images.length);
+    const featureEl = images.map(item => (
+      <figure key={item.childImageSharp.sizes.src} className="feature-img">
+        <Img sizes={item.childImageSharp.sizes} />
+      </figure>
+    ));
+    featureEl.splice(random, 0,
+      <div key="title" className="feature-text">
+        <div className="title"><p>{title}</p></div>
+        <span className="link">Read More</span>
+      </div>
+    );
+    this.featureEl = featureEl;
   }
 
   componentDidMount() {
@@ -67,18 +79,7 @@ export default class Feature extends Component {
   }
 
   render() {
-    const { title, images, path } = this.props;
-    const featureEl = images.map(item => (
-      <figure key={item.childImageSharp.sizes.src} className="feature-img">
-        <Img sizes={item.childImageSharp.sizes} />
-      </figure>
-    ));
-    featureEl.splice(this.random, 1,
-      <div key="title" className="feature-text">
-        <div className="title"><p>{title}</p></div>
-        <span className="link">Read More</span>
-      </div>
-    );
+    const { path } = this.props;
 
     return (
       <div
@@ -88,9 +89,9 @@ export default class Feature extends Component {
         className="feature"
       >
         <Link to={path} className="feature-wrapper">
-          {featureEl}
-          {featureEl}
-          {featureEl}
+          {this.featureEl}
+          {this.featureEl}
+          {this.featureEl}
         </Link>
       </div>
     );
