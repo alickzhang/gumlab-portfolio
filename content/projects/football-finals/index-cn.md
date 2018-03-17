@@ -1,5 +1,5 @@
 ---
-title: "Football Finals | Australia"
+title: "Football Finals Australia"
 cover: "./assets/8930e460531691.5a5044c8a19e7.jpg"
 category: "Animation"
 date: "07/01/2018"
@@ -16,12 +16,12 @@ featuredImages: [
   "./assets/0e083260531691.5a5044c8a1f47.jpg"]
 ---
 
-<iframe src="http://open.iqiyi.com/developer/player_js/coopPlayerIndex.html?vid=1afd3d5e0decdfd75f3533743ec67b78&tvId=14277352609&accessToken=2.f22860a2479ad60d8da7697274de9346&appKey=3955c3425820435e86d0f4cdfe56f5e7&appId=1368&height=100%&width=100%" 
-  frameborder="0" 
-  allowfullscreen="true" 
-  width="1600" 
+<iframe src="http://open.iqiyi.com/developer/player_js/coopPlayerIndex.html?vid=1afd3d5e0decdfd75f3533743ec67b78&tvId=14277352609&accessToken=2.f22860a2479ad60d8da7697274de9346&appKey=3955c3425820435e86d0f4cdfe56f5e7&appId=1368&height=100%&width=100%"
+  frameborder="0"
+  allowfullscreen="true"
+  width="1600"
   height="900"></iframe>
-  
+
 # A TVC campaign with hyper-stylised animation, based on real life action moments induces "That Finals Feeling".
 
 ![](./assets/8930e460531691.5a5044c8a19e7.jpg)

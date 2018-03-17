@@ -10,16 +10,20 @@
 }
 
 .view-all-text a {
-  padding: .5rem 0;
   font-size: 72px;
-  border-bottom: 2px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  transition: .2s;
+}
+
+.view-all-text a:hover {
+  border-bottom-color: transparent;
 }
 
 @media (max-width: 1200px) {
   .view-all-text {
     padding-bottom: 4rem;
   }
-  
+
   .view-all-text a {
     font-size: 3.5vw;
   }

@@ -1,5 +1,5 @@
 ---
-title: "Adidas Originals | Countdown"
+title: "Adidas Originals Countdown"
 cover: "./assets/ad523b60340033.5a48519199627.jpg"
 category: "Animation"
 date: "02/01/2018"

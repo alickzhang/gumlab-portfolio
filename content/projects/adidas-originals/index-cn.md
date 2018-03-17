@@ -1,5 +1,5 @@
 ---
-title: "Adidas Originals | Countdown"
+title: "Adidas Originals Countdown"
 cover: "./assets/ad523b60340033.5a48519199627.jpg"
 category: "Animation"
 date: "02/01/2018"
@@ -23,10 +23,10 @@ featuredImages: [
 
 # In 2017, Adidas Originals announces a new brand ambassador Lu Han. GUMLAB was invited to create a teaser video for this announcement.
 
-<iframe src="http://open.iqiyi.com/developer/player_js/coopPlayerIndex.html?vid=4b3cc709ba1f4f38f45e349922a5dfd9&tvId=14271641709&accessToken=2.f22860a2479ad60d8da7697274de9346&appKey=3955c3425820435e86d0f4cdfe56f5e7&appId=1368&height=100%&width=100%" 
-  frameborder="0" 
-  allowfullscreen="true" 
-  width="1600" 
+<iframe src="http://open.iqiyi.com/developer/player_js/coopPlayerIndex.html?vid=4b3cc709ba1f4f38f45e349922a5dfd9&tvId=14271641709&accessToken=2.f22860a2479ad60d8da7697274de9346&appKey=3955c3425820435e86d0f4cdfe56f5e7&appId=1368&height=100%&width=100%"
+  frameborder="0"
+  allowfullscreen="true"
+  width="1600"
   height="900"></iframe>
 
 ![](./assets/ad523b60340033.5a48519199627.jpg)

@@ -31,17 +31,33 @@
 }
 
 .feature-text .title {
-  font-size: 72px;
-  line-height: 1.1;
   margin-bottom: 2rem;
+  font-size: 72px;
+  line-height: 1.2;
   text-transform: uppercase;
 }
 
+.feature-text .title p {
+  display: inline;
+  border-bottom: 1px solid transparent;
+  transition: .2s;
+}
+
 .feature-text .link {
-  color: #979797;
   display: inline-block;
+  color: #979797;
   font-size: 20px;
   border-bottom: 1px solid #ccc;
+  transition: .2s;
+}
+
+.feature-text:hover .title p {
+  border-bottom-color: rgba(0, 0, 0, .75);
+}
+
+.feature-text:hover .link {
+  color: #35d078;
+  border-bottom-color: transparent;
 }
 
 .feature-img {

@@ -1,5 +1,5 @@
 ---
-title: "Football Finals | Australia"
+title: "Football Finals Australia"
 cover: "./assets/8930e460531691.5a5044c8a19e7.jpg"
 category: "Animation"
 date: "07/01/2018"

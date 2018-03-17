@@ -66,7 +66,7 @@ export default class Feature extends Component {
     const featureEl = (
       <Fragment>
         <div className="feature-text">
-          <div className="title">{title}</div>
+          <div className="title"><p>{title}</p></div>
           <span className="link">Read More</span>
         </div>
         {images.map(item => (
