@@ -73,6 +73,19 @@
   animation: spin 2s infinite linear;
 }
 
+@media (max-width: 768px) {
+  .cover-title {
+    font-size: 6.5vw;
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 480px) {
+  .cover-title {
+    font-size: 6vh;
+  }
+}
+
 @keyframes fadein {
   from {
     opacity: 0;
