@@ -67,6 +67,7 @@ class SEO extends Component {
         {/* General tags */}
         <meta name="description" content={description} />
         <meta name="image" content={image} />
+        <link rel="apple-touch-icon" href={image} />
 
         {/* Schema.org tags */}
         <script type="application/ld+json">
