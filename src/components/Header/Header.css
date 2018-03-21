@@ -29,8 +29,22 @@
   border-bottom: 1px solid;
 }
 
+.header-bar {
+  display: none;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
 @media (max-width: 480px) {
-  .header-links-project {
+  .header-links {
     display: none;
+  }
+
+  .header-bar {
+    display: block;
   }
 }

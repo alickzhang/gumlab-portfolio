@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Link from "gatsby-link";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import Sidebar from "../Sidebar/Sidebar";
 import "./Header.css";
 
 export default class Header extends Component {
@@ -19,7 +20,8 @@ export default class Header extends Component {
   }
 
   state = {
-    isTop: true
+    isTop: true,
+    sidebarOpen: false
   }
 
   componentDidMount() {
@@ -37,8 +39,17 @@ export default class Header extends Component {
     }
   }
 
+  onSidebarOpen = () => {
+    this.setState({ sidebarOpen: true });
+  }
+
+  onSidebarClose = () => {
+    this.setState({ sidebarOpen: false });
+  }
+
   render() {
     const { color, background, project } = this.props;
+    const { sidebarOpen } = this.state;
     const path = window.location.pathname;
     return (
       <div className="header" style={{ color, background }}>
@@ -70,6 +81,10 @@ export default class Header extends Component {
             About
           </Link>
         </nav>
+        <button className="header-bar" style={{ color }} onClick={this.onSidebarOpen}>
+          <i className="fa fa-bars" />
+        </button>
+        <Sidebar open={sidebarOpen} onSidebarClose={this.onSidebarClose} />
       </div>
     );
   }

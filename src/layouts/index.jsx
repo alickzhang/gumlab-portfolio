@@ -2,14 +2,9 @@ import React, { Component } from "react";
 import Helmet from "react-helmet";
 import config from "../../data/SiteConfig";
 import Header from "../components/Header/Header";
-import Sidebar from "../components/Sidebar/Sidebar";
 import "./index.css";
 
 export default class MainLayout extends Component {
-
-  state = {
-    sidebarOpen: false
-  }
 
   componentDidMount() {
     document.addEventListener('scroll', this.onScroll);
@@ -23,14 +18,6 @@ export default class MainLayout extends Component {
     if (window.scrollY + window.innerHeight >= document.body.offsetHeight) {
       window.scroll(0, 0);
     }
-  }
-
-  onSidebarOpen = () => {
-    this.setState({ sidebarOpen: true });
-  }
-
-  onSidebarClose = () => {
-    this.setState({ sidebarOpen: false });
   }
 
   getLocalTitle() {
@@ -68,15 +55,13 @@ export default class MainLayout extends Component {
 
   render() {
     const { children } = this.props;
-    const { sidebarOpen } = this.state;
     return (
       <div>
         <Helmet>
           <title>{`${config.siteTitle} |  ${this.getLocalTitle()}`}</title>
           <meta name="description" content={config.siteDescription} />
         </Helmet>
-        <Header onSidebarOpen={this.onSidebarOpen} />
-        <Sidebar open={sidebarOpen} onSidebarClose={this.onSidebarClose} />
+        <Header />
         {children()}
       </div>
     );
