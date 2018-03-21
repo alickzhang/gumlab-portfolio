@@ -10,7 +10,7 @@
 }
 
 .view-all-text a {
-  font-size: 72px;
+  font-size: 3rem;
   font-weight: 300;
   border-bottom: 1px solid #ccc;
   transition: .2s;

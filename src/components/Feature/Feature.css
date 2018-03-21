@@ -76,10 +76,6 @@
   .feature-text .title {
     font-size: 3.5vw;
   }
-
-  .feature-text .link {
-    font-size: .875rem;
-  }
 }
 
 @media (max-width: 768px) {

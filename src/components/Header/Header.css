@@ -11,13 +11,26 @@
 }
 
 .header-links {
+  display: flex;
   text-transform: uppercase;
 }
 
-.header-links a {
+.header-links a,
+.header-links .icon-arrow {
   margin-right: .75rem;
 }
 
-.header-links a:hover {
-  border-bottom: 1px solid rgba(0, 0, 0, .75);
+.header-links .icon-arrow {
+  font-size: 10px;
+}
+
+.header-links a:hover,
+.header-links a.active {
+  border-bottom: 1px solid;
+}
+
+@media (max-width: 480px) {
+  .header-links-project {
+    display: none;
+  }
 }
