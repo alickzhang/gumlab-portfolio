@@ -42,7 +42,7 @@ export default class BackTop extends Component {
     const btnClassName = classNames("back-top", { visible });
     return (
       <button className={btnClassName} onClick={() => scrollYTo(top || window.innerHeight)} style={{ color }}>
-        <i className="fa fa-arrow-up" />
+        <span className="icon-arrow">&#xe801;</span>
       </button>
     );
   }

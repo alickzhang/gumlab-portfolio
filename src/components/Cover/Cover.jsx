@@ -6,7 +6,6 @@ import Link from "gatsby-link";
 import Img from "gatsby-image";
 import scrollYTo from "../../shared/scrollBehaviour";
 import "./Cover.css";
-import logo from "./images/logo_white.png";
 
 export default class Cover extends Component {
 
@@ -40,12 +39,10 @@ export default class Cover extends Component {
           <div className="cover-img-container">
             <Img sizes={sizes} fadeIn={fadein} className={coverClass} onLoad={this.props.onLoad} />
           </div>
-          <div className="logo">
-            <Link to="/"><img src={logo} alt="logo" /></Link>
-          </div>
+          <Link to="/" className="logo" style={{ color: titleColor }}>Gumlab</Link>
           {title && <div className="cover-title" style={{ color: titleColor }}>{title}</div>}
           <button className="down" onClick={() => scrollYTo(window.innerHeight)} style={{ color: titleColor }}>
-            {loading ? <i className="fa fa-spinner loading" /> : <i className="fa fa-arrow-down" />}
+            {loading ? <i className="fa fa-spinner loading" /> : <span className="icon-arrow">&#xe800;</span>}
           </button>
         </div>
       </Fragment>
