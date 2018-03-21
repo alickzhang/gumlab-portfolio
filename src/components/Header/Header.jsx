@@ -1,5 +1,5 @@
 /* eslint jsx-a11y/anchor-is-valid: "off" */
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import Link from "gatsby-link";
 import PropTypes from "prop-types";
 import classNames from "classnames";
@@ -21,12 +21,14 @@ export default class Header extends Component {
 
   state = {
     isTop: true,
-    sidebarOpen: false
+    sidebarOpen: false,
+    path: null
   }
 
   componentDidMount() {
     document.addEventListener('scroll', this.onScroll);
-    this.path = window.location.pathname;
+    const path = window.location.pathname;
+    this.setState({ path });
   }
 
   componentWillUnmount() {
@@ -50,32 +52,32 @@ export default class Header extends Component {
 
   render() {
     const { color, background, project } = this.props;
-    const { sidebarOpen } = this.state;
+    const { sidebarOpen, path } = this.state;
     return (
       <div className="header" style={{ color, background }}>
         <nav className="header-links">
           {project &&
-            <div className="header-links-project">
+            <Fragment>
               <Link
                 to={`/projects${project.id}`}
-                className={classNames({ "active": this.path === `/projects${project.id}` })}
+                className={classNames({ "active": path === `/projects${project.id}` })}
                 style={{ borderBottomColor: color }}
               >
                 {project.title}
               </Link>
               <span className="icon-arrow">&#xe802;</span>
-            </div>
+            </Fragment>
           }
           <Link
             to="/projects"
-            className={classNames({ "active": this.path === "/projects" })}
+            className={classNames({ "active": path === "/projects" })}
             style={{ borderBottomColor: color }}
           >
             Projects
           </Link>
           <Link
             to="/about"
-            className={classNames({ "active": this.path === "/about" })}
+            className={classNames({ "active": path === "/about" })}
             style={{ borderBottomColor: color }}
           >
             About

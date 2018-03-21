@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Helmet from "react-helmet";
 import Cover from "../components/Cover/Cover";
+import Header from "../components/Header/Header";
 import ProjectList from "../components/ProjectList/ProjectList";
 import Footer from "../components/Footer/Footer";
 import BackTop from "../components/BackTop/BackTop";
@@ -27,6 +28,7 @@ export default class TagTemplate extends Component {
       <div className="tag-container">
         <Helmet title={`Projects tagged as "${tag}" | ${config.siteTitle}`} />
         <Cover cover={cover} fadein fixed title={`#${tag}`} />
+        <Header />
         <ProjectList projectEdges={projectEdges} />
         <Footer config={config} />
         <Cover cover={cover} fixed title={`#${tag}`} />

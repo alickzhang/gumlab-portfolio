@@ -4,6 +4,7 @@ import "font-awesome/css/font-awesome.min.css";
 import FeaturedProjectList from "../components/FeaturedProjectList/FeaturedProjectList";
 import SEO from "../components/SEO/SEO";
 import Cover from "../components/Cover/Cover";
+import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import BackTop from "../components/BackTop/BackTop";
 import config from "../../data/SiteConfig";
@@ -38,6 +39,7 @@ export default class Index extends Component {
         {
           loaded &&
           <Fragment>
+            <Header />
             <FeaturedProjectList projectEdges={projectEdges} />
             <Footer config={config} />
             <Cover cover={cover} fixed />

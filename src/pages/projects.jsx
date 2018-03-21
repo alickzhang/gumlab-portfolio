@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Helmet from "react-helmet";
 import Cover from "../components/Cover/Cover";
+import Header from "../components/Header/Header";
 import ProjectList from "../components/ProjectList/ProjectList";
 import Footer from "../components/Footer/Footer";
 import BackTop from "../components/BackTop/BackTop";
@@ -26,6 +27,7 @@ export default class Projects extends Component {
       <div className="projects-container">
         <Helmet title={`Projects | ${config.siteTitle}`} />
         <Cover cover={cover} fadein fixed />
+        <Header />
         <ProjectList projectEdges={projectEdges} />
         <Footer config={config} />
         <Cover cover={cover} fixed />

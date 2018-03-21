@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Helmet from "react-helmet";
 import config from "../../data/SiteConfig";
-import Header from "../components/Header/Header";
 import "./index.css";
 
 export default class MainLayout extends Component {
@@ -61,7 +60,6 @@ export default class MainLayout extends Component {
           <title>{`${config.siteTitle} |  ${this.getLocalTitle()}`}</title>
           <meta name="description" content={config.siteDescription} />
         </Helmet>
-        <Header />
         {children()}
       </div>
     );
