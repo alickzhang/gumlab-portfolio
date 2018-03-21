@@ -1,5 +1,5 @@
 ---
-title: "Audi | A3 Campaign"
+title: "Audi A3 Campaign"
 cover: "./assets/ce23fe59934259.5a377d814d80f.jpg"
 category: "Animation"
 date: "18/12/2017"
