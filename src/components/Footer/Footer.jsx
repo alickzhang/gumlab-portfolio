@@ -20,8 +20,9 @@ class Footer extends Component {
               Melbourne Australia
             </address>
             <address>
+              98B Yanping Road,<br />
               Jing&apos;an District,<br />
-              Shanghai China
+              Shanghai, China
             </address>
           </section>
           <section>
