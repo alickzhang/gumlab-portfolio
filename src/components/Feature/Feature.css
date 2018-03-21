@@ -33,7 +33,7 @@
 
 .feature-text .title {
   margin-bottom: 2rem;
-  font-size: 72px;
+  font-size: 3rem;
   line-height: 1.2;
   text-transform: uppercase;
 }
@@ -47,7 +47,7 @@
 .feature-text .link {
   display: inline-block;
   color: #979797;
-  font-size: 20px;
+  font-size: .875rem;
   border-bottom: 1px solid #ccc;
   transition: .2s;
 }
