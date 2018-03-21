@@ -26,6 +26,7 @@ export default class Header extends Component {
 
   componentDidMount() {
     document.addEventListener('scroll', this.onScroll);
+    this.path = window.location.pathname;
   }
 
   componentWillUnmount() {
@@ -50,7 +51,6 @@ export default class Header extends Component {
   render() {
     const { color, background, project } = this.props;
     const { sidebarOpen } = this.state;
-    const path = window.location.pathname;
     return (
       <div className="header" style={{ color, background }}>
         <nav className="header-links">
@@ -58,7 +58,7 @@ export default class Header extends Component {
             <div className="header-links-project">
               <Link
                 to={`/projects${project.id}`}
-                className={classNames({ "active": path === `/projects${project.id}` })}
+                className={classNames({ "active": this.path === `/projects${project.id}` })}
                 style={{ borderBottomColor: color }}
               >
                 {project.title}
@@ -68,14 +68,14 @@ export default class Header extends Component {
           }
           <Link
             to="/projects"
-            className={classNames({ "active": path === "/projects" })}
+            className={classNames({ "active": this.path === "/projects" })}
             style={{ borderBottomColor: color }}
           >
             Projects
           </Link>
           <Link
             to="/about"
-            className={classNames({ "active": path === "/about" })}
+            className={classNames({ "active": this.path === "/about" })}
             style={{ borderBottomColor: color }}
           >
             About
