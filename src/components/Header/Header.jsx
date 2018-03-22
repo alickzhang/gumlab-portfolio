@@ -65,7 +65,7 @@ export default class Header extends Component {
               >
                 {project.title}
               </Link>
-              <span className="icon-arrow">&#xe802;</span>
+              <i className="icons">&#xe803;</i>
             </Fragment>
           }
           <Link
@@ -84,7 +84,7 @@ export default class Header extends Component {
           </Link>
         </nav>
         <button className="header-bar" style={{ color }} onClick={this.onSidebarOpen}>
-          <i className="fa fa-bars" />
+          <i className="icons">&#xf008;</i>
         </button>
         <Sidebar open={sidebarOpen} onSidebarClose={this.onSidebarClose} />
       </div>

@@ -13,7 +13,7 @@ export default class Sidebar extends Component {
     return (
       <div className="sidebar-container" style={{ transform }}>
         <button className="close" onClick={onSidebarClose}>
-          <i className="fa fa-times" />
+          <i className="icons">&#xe802;</i>
         </button>
         <ul className="menu">
           <li className="menu-item">
