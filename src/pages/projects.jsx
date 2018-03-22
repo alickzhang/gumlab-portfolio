@@ -39,7 +39,7 @@ export default class Projects extends Component {
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
-  query projectsQuery {
+  query ProjectsQuery {
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }

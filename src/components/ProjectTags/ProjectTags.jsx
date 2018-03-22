@@ -5,7 +5,7 @@ import Link from "gatsby-link";
 
 import "./ProjectTags.css";
 
-class ProjectTags extends Component {
+export default class ProjectTags extends Component {
   render() {
     const { tags } = this.props;
     return (
@@ -24,5 +24,3 @@ class ProjectTags extends Component {
     );
   }
 }
-
-export default ProjectTags;

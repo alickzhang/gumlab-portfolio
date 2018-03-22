@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Helmet from "react-helmet";
 import config from "../../data/SiteConfig";
 
-class NotFoundPage extends Component {
+export default class NotFoundPage extends Component {
   render() {
     return (
       <div>
@@ -15,5 +15,3 @@ class NotFoundPage extends Component {
     );
   }
 }
-
-export default NotFoundPage;

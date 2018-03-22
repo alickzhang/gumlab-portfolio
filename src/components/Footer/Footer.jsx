@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Footer.css";
 
-class Footer extends Component {
+export default class Footer extends Component {
   render() {
     const { config } = this.props;
     return (
@@ -59,5 +59,3 @@ class Footer extends Component {
     );
   }
 }
-
-export default Footer;

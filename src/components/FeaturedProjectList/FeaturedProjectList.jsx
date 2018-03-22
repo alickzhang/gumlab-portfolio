@@ -5,7 +5,7 @@ import Feature from "../Feature/Feature";
 
 import "./FeaturedProjectList.css";
 
-class FeaturedProjectList extends Component {
+export default class FeaturedProjectList extends Component {
 
   getProjectList() {
     const projectList = [];
@@ -40,5 +40,3 @@ class FeaturedProjectList extends Component {
     );
   }
 }
-
-export default FeaturedProjectList;
