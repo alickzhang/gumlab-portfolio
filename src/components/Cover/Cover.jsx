@@ -39,7 +39,7 @@ export default class Cover extends Component {
           <div className="cover-img-container">
             <Img sizes={sizes} fadeIn={fadein} className={coverClass} onLoad={this.props.onLoad} />
           </div>
-          <Link to="/" className="logo" style={{ color: titleColor }}>Gumlab</Link>
+          <Link to="/" className="logo" style={{ color: titleColor }}>GUMLAB</Link>
           {title && <div className="cover-title" style={{ color: titleColor }}>{title}</div>}
           <button className="down" onClick={() => scrollYTo(window.innerHeight)} style={{ color: titleColor }}>
             {loading ? <i className="fa fa-spinner loading" /> : <i className="icons">&#xe800;</i>}

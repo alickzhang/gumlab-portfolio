@@ -68,20 +68,22 @@ export default class Header extends Component {
               <i className="icons">&#xe803;</i>
             </Fragment>
           }
-          <Link
-            to="/projects"
-            className={classNames({ "active": path === "/projects" })}
-            style={{ borderBottomColor: color }}
-          >
-            Projects
-          </Link>
-          <Link
-            to="/about"
-            className={classNames({ "active": path === "/about" })}
-            style={{ borderBottomColor: color }}
-          >
-            About
-          </Link>
+          <div className="header-fixed-links">
+            <Link
+              to="/projects"
+              className={classNames({ "active": path === "/projects" })}
+              style={{ borderBottomColor: color }}
+            >
+              Projects
+            </Link>
+            <Link
+              to="/about"
+              className={classNames({ "active": path === "/about" })}
+              style={{ borderBottomColor: color }}
+            >
+              About
+            </Link>
+          </div>
         </nav>
         <button className="header-bar" style={{ color }} onClick={this.onSidebarOpen}>
           <i className="icons">&#xf008;</i>

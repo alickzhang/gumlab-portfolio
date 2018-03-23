@@ -28,6 +28,10 @@
   border-bottom: 1px solid;
 }
 
+.header-fixed-links {
+  display: inline-block;
+}
+
 .header-bar {
   display: none;
   background: transparent;
