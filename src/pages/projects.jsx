@@ -6,11 +6,13 @@ import ProjectList from "../components/ProjectList/ProjectList";
 import Footer from "../components/Footer/Footer";
 import BackTop from "../components/BackTop/BackTop";
 import config from "../../data/SiteConfig";
+import lookupRequesterIp from "../shared/requesterIpLookupBehaviour";
 
 export default class Projects extends Component {
 
   state = {
-    cover: null
+    cover: null,
+    projectPathPrefix: ''
   }
 
   componentWillMount() {
@@ -18,17 +20,22 @@ export default class Projects extends Component {
     const randomEdge = projectEdges[Math.floor(Math.random() * projectEdges.length)];
     const { cover } = randomEdge.node.frontmatter;
     this.setState({ cover });
+    lookupRequesterIp().then((result) => {
+      if (result.data.country_code === 'CN') {
+        this.setState({ projectPathPrefix: 'cn' });
+      }
+    });
   }
 
   render() {
     const projectEdges = this.props.data.allMarkdownRemark.edges;
-    const { cover } = this.state;
+    const { cover, projectPathPrefix } = this.state;
     return (
       <div className="projects-container">
         <Helmet title={`Projects | ${config.siteTitle}`} />
         <Cover cover={cover} fadein fixed />
         <Header />
-        <ProjectList projectEdges={projectEdges} />
+        <ProjectList projectEdges={projectEdges} projectPathPrefix={projectPathPrefix} />
         <Footer config={config} />
         <Cover cover={cover} fixed />
         <BackTop />

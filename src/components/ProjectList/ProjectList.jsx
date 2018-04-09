@@ -60,17 +60,24 @@ export default class ProjectList extends Component {
   render() {
     const { height, layouts } = this.state;
     const projectList = this.getProjectList();
+    const { projectPathPrefix } = this.props;
     return (
       <div className="projects-layout" style={{ height: `calc(${height}px + 4rem)` }}>
-        {projectList.map((project, index) => (
-          <Link key={project.title} to={project.path} className="project-item" style={{ ...layouts[index] }}>
-            <div className="project-item-inner">
-              <Img sizes={project.cover.childImageSharp.sizes} />
-              <div className="project-item-overlay">
-                <h3 className="project-title">{project.title}</h3>
+        {projectList.map((project, index) => {
+          let projectPath = project.path;
+          if (projectPathPrefix.length) {
+            projectPath = `${projectPathPrefix}/${projectPath}`;
+          }
+          return (
+            <Link key={project.title} to={projectPath} className="project-item" style={{ ...layouts[index] }}>
+              <div className="project-item-inner">
+                <Img sizes={project.cover.childImageSharp.sizes} />
+                <div className="project-item-overlay">
+                  <h3 className="project-title">{project.title}</h3>
+                </div>
               </div>
-            </div>
-          </Link>)
+            </Link>);
+          }
         )}
       </div>
     );
