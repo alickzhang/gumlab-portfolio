@@ -28,12 +28,17 @@ export default class FeaturedProjectList extends Component {
 
   render() {
     const projectList = this.getProjectList();
+    const { projectPathPrefix } = this.props;
     return (
       <div className="project-list">
         <div className="featured">
-          {projectList.map(project => (
-            <Feature key={project.title} title={project.title} images={project.featuredImages || []} path={project.path} />
-          ))}
+          {projectList.map(project => {
+            let projectPath = project.path;
+            if (projectPathPrefix.length) {
+              projectPath = `${projectPathPrefix}/${projectPath}`;
+            }
+            return <Feature key={project.title} title={project.title} images={project.featuredImages || []} path={projectPath} />;
+          })}
         </div>
         <div className="view-all-text"><Link to="/projects">View All Projects</Link></div>
       </div>

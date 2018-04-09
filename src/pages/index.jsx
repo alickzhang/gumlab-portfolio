@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import Helmet from "react-helmet";
+import axios from "axios";
 import "font-awesome/css/font-awesome.min.css";
 import FeaturedProjectList from "../components/FeaturedProjectList/FeaturedProjectList";
 import SEO from "../components/SEO/SEO";
@@ -9,12 +10,14 @@ import Footer from "../components/Footer/Footer";
 import BackTop from "../components/BackTop/BackTop";
 import config from "../../data/SiteConfig";
 
+
 export default class Index extends Component {
 
   state = {
     cover: null,
     loaded: false,
-    loading: false
+    loading: false,
+    projectPathPrefix: ''
   }
 
   componentWillMount() {
@@ -22,6 +25,21 @@ export default class Index extends Component {
     const randomEdge = projectEdges[Math.floor(Math.random() * projectEdges.length)];
     const { cover } = randomEdge.node.frontmatter;
     this.setState({ cover, loading: true });
+    const lastRequesterIpLookup = JSON.parse(sessionStorage.getItem('last_lookup'));
+    if (!lastRequesterIpLookup || (Date.now() - lastRequesterIpLookup.timestamp) > 300000) {
+      axios.get('http://api.ipstack.com/check?access_key=569198ac9a9ef9b1bf1a4d4306ede289')
+        .then(data => {
+          if (data.country_code === 'CN') {
+            this.setState({ projectPathPrefix: 'cn' });
+          }
+          sessionStorage.setItem('last_lookup', JSON.stringify({
+            data,
+            timestamp: Date.now()
+          }));
+        });
+    } else if (lastRequesterIpLookup.data.country_code === 'CN') {
+      this.setState({ projectPathPrefix: 'cn' });
+    }
   }
 
   onLoad = () => {
@@ -30,7 +48,7 @@ export default class Index extends Component {
 
   render() {
     const projectEdges = this.props.data.allMarkdownRemark.edges;
-    const { cover, loaded, loading } = this.state;
+    const { cover, loaded, loading, projectPathPrefix } = this.state;
     return (
       <div className="index-container">
         <Helmet title={config.siteTitle} />
@@ -40,7 +58,7 @@ export default class Index extends Component {
           loaded &&
           <Fragment>
             <Header />
-            <FeaturedProjectList projectEdges={projectEdges} />
+            <FeaturedProjectList projectEdges={projectEdges} projectPathPrefix={projectPathPrefix} />
             <Footer config={config} />
             <Cover cover={cover} fixed />
             <BackTop />
