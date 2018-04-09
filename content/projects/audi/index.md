@@ -44,14 +44,6 @@ featuredImages: [
 
 ![](./assets/15848659934259.5a37871876edc.jpg)
 
-<iframe src="https://player.vimeo.com/video/247773740?title=0&byline=0"
-  width="640"
-  height="360"
-  frameborder="0"
-  webkitallowfullscreen
-  mozallowfullscreen
-  allowfullscreen></iframe>
-
 ![](./assets/14140d59934259.5a378f8bc48c1.jpg)
 
 ![](./assets/89647459934259.5a378b488c8b6.gif)

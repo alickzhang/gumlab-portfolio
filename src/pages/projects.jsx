@@ -20,9 +20,10 @@ export default class Projects extends Component {
     const { cover } = randomEdge.node.frontmatter;
     this.setState({ cover });
     if (typeof window !== 'undefined') {
+      /* eslint global-require: "off" */
       const lookupRequesterIp = require("../shared/requesterIpLookupBehaviour");
-      lookupRequesterIp().then((result) => {
-        if (result.data.country_code === 'CN') {
+      lookupRequesterIp().then(({ data }) => {
+        if (data.country_code === 'CN') {
           this.setState({ projectPathPrefix: 'cn' });
         }
       });

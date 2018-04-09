@@ -24,7 +24,7 @@ export default class ProjectList extends Component {
     const projectList = [];
     this.props.projectEdges.forEach(({ node }) => {
       projectList.push({
-        path: `/projects${node.fields.slug}`,
+        path: `projects${node.fields.slug}`,
         tags: node.frontmatter.tags,
         cover: node.frontmatter.cover,
         title: node.frontmatter.title,

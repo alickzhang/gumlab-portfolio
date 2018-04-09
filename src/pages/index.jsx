@@ -24,9 +24,10 @@ export default class Index extends Component {
     const { cover } = randomEdge.node.frontmatter;
     this.setState({ cover, loading: true });
     if (typeof window !== 'undefined') {
+      /* eslint global-require: "off" */
       const lookupRequesterIp = require("../shared/requesterIpLookupBehaviour");
-      lookupRequesterIp().then((result) => {
-        if (result.data.country_code === 'CN') {
+      lookupRequesterIp().then(({ data }) => {
+        if (data.country_code === 'CN') {
           this.setState({ projectPathPrefix: 'cn' });
         }
       });
