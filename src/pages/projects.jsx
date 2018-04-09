@@ -6,7 +6,6 @@ import ProjectList from "../components/ProjectList/ProjectList";
 import Footer from "../components/Footer/Footer";
 import BackTop from "../components/BackTop/BackTop";
 import config from "../../data/SiteConfig";
-import lookupRequesterIp from "../shared/requesterIpLookupBehaviour";
 
 export default class Projects extends Component {
 
@@ -20,11 +19,14 @@ export default class Projects extends Component {
     const randomEdge = projectEdges[Math.floor(Math.random() * projectEdges.length)];
     const { cover } = randomEdge.node.frontmatter;
     this.setState({ cover });
-    lookupRequesterIp().then((result) => {
-      if (result.data.country_code === 'CN') {
-        this.setState({ projectPathPrefix: 'cn' });
-      }
-    });
+    if (typeof window !== 'undefined') {
+      const lookupRequesterIp = require("../shared/requesterIpLookupBehaviour");
+      lookupRequesterIp().then((result) => {
+        if (result.data.country_code === 'CN') {
+          this.setState({ projectPathPrefix: 'cn' });
+        }
+      });
+    }
   }
 
   render() {

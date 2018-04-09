@@ -65,7 +65,7 @@ export default class ProjectList extends Component {
       <div className="projects-layout" style={{ height: `calc(${height}px + 4rem)` }}>
         {projectList.map((project, index) => {
           let projectPath = project.path;
-          if (projectPathPrefix.length) {
+          if (projectPathPrefix && projectPathPrefix.length) {
             projectPath = `${projectPathPrefix}/${projectPath}`;
           }
           return (
