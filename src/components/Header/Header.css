@@ -43,6 +43,10 @@
 }
 
 @media (max-width: 480px) {
+  .header {
+    margin-top: 54vw;
+  }
+
   .header-links {
     display: none;
   }

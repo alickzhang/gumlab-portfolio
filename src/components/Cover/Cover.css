@@ -144,12 +144,20 @@
 }
 
 @media (max-width: 480px) {
+  .cover {
+    height: 54vw;
+  }
+
   .logo {
     font-size: 30px;
   }
 
   .cover-title {
     font-size: 6vh;
+  }
+
+  .down {
+    display: none;
   }
 }
 

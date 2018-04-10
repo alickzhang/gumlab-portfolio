@@ -18,5 +18,4 @@ const lookupRequesterIp = () => {
   return Promise.resolve(getLastLookup());
 };
 
-
 export { lookupRequesterIp as default };

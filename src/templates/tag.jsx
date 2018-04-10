@@ -10,7 +10,8 @@ import config from "../../data/SiteConfig";
 export default class TagTemplate extends Component {
 
   state = {
-    cover: null
+    cover: null,
+    projectPathPrefix: ''
   }
 
   componentWillMount() {
@@ -18,18 +19,27 @@ export default class TagTemplate extends Component {
     const randomEdge = projectEdges[Math.floor(Math.random() * projectEdges.length)];
     const { cover } = randomEdge.node.frontmatter;
     this.setState({ cover });
+    if (typeof window !== 'undefined') {
+      /* eslint global-require: "off" */
+      const lookupRequesterIp = require("../shared/requesterIpLookupBehaviour");
+      lookupRequesterIp().then(({ data }) => {
+        if (data.country_code === 'CN') {
+          this.setState({ projectPathPrefix: 'cn' });
+        }
+      });
+    }
   }
 
   render() {
     const projectEdges = this.props.data.allMarkdownRemark.edges;
     const { tag } = this.props.pathContext;
-    const { cover } = this.state;
+    const { cover, projectPathPrefix } = this.state;
     return (
       <div className="tag-container">
         <Helmet title={`Projects tagged as "${tag}" | ${config.siteTitle}`} />
         <Cover cover={cover} fadein fixed title={`#${tag}`} />
         <Header />
-        <ProjectList projectEdges={projectEdges} />
+        <ProjectList projectEdges={projectEdges} projectPathPrefix={projectPathPrefix} />
         <Footer config={config} />
         <Cover cover={cover} fixed title={`#${tag}`} />
         <BackTop />
