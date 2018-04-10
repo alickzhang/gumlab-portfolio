@@ -38,7 +38,7 @@ export const pageQuery = graphql`
             cover {
               childImageSharp {
                 sizes(maxWidth: 1600) {
-                  ...GatsbyImageSharpSizes
+                  ...GatsbyImageSharpSizes_withWebp
                 }
               }
             }
