@@ -7,6 +7,16 @@ import "./Sidebar.css";
 
 export default class Sidebar extends Component {
 
+  static propTypes = {
+    open: PropTypes.bool,
+    onSidebarClose: PropTypes.func
+  }
+
+  static defaultProps = {
+    open: false,
+    onSidebarClose: () => {}
+  }
+
   render() {
     const { open, onSidebarClose } = this.props;
     const transform = open ? 'translateX(0)' : 'translateX(-100%)';
@@ -29,13 +39,4 @@ export default class Sidebar extends Component {
       </div>
     );
   }
-}
-
-Sidebar.propTypes = {
-  open: PropTypes.bool,
-  onSidebarClose: PropTypes.func
-}
-
-Sidebar.defaultProps = {
-  open: false
 }

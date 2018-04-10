@@ -10,7 +10,7 @@ import "./Cover.css";
 export default class Cover extends Component {
 
   static propTypes = {
-    cover: PropTypes.object,
+    cover: PropTypes.object.isRequired,
     fadein: PropTypes.bool,
     fixed: PropTypes.bool,
     title: PropTypes.string,
@@ -22,15 +22,17 @@ export default class Cover extends Component {
   static defaultProps = {
     fadein: false,
     fixed: false,
+    title: '',
     titleColor: '#fff',
-    loading: false
+    loading: false,
+    onLoad: () => {}
   }
 
   render() {
     const { cover, fadein, fixed, title, titleColor, loading } = this.props;
     let sizes = null;
     if (cover && cover.childImageSharp) {
-      sizes = cover.childImageSharp.sizes;
+      ({ sizes } = cover.childImageSharp);
     }
     const coverClass = classNames('cover-img', { fadein, fixed });
     return (
