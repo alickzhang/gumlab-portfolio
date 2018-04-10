@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from "react";
 import Helmet from "react-helmet";
-import "font-awesome/css/font-awesome.min.css";
 import FeaturedProjectList from "../components/FeaturedProjectList/FeaturedProjectList";
 import SEO from "../components/SEO/SEO";
 import Cover from "../components/Cover/Cover";

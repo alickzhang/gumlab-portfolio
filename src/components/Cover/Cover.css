@@ -110,6 +110,7 @@
 .icons {
   font-family: "icons";
   font-style: normal;
+  display: inline-block;
 }
 
 .down {
