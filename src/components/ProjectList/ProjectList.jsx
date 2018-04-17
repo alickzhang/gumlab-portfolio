@@ -24,7 +24,7 @@ export default class ProjectList extends Component {
     const projectList = [];
     this.props.projectEdges.forEach(({ node }) => {
       projectList.push({
-        path: `projects${node.fields.slug}`,
+        path: `/projects${node.fields.slug}`,
         tags: node.frontmatter.tags,
         cover: node.frontmatter.cover,
         title: node.frontmatter.title,
@@ -66,7 +66,7 @@ export default class ProjectList extends Component {
         {projectList.map((project, index) => {
           let projectPath = project.path;
           if (projectPathPrefix && projectPathPrefix.length) {
-            projectPath = `${projectPathPrefix}/${projectPath}`;
+            projectPath = `${projectPathPrefix}${projectPath}`;
           }
           return (
             <Link key={project.title} to={projectPath} className="project-item" style={{ ...layouts[index] }}>

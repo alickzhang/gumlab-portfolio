@@ -53,6 +53,7 @@ export default class Header extends Component {
   render() {
     const { color, background, project } = this.props;
     const { sidebarOpen, path } = this.state;
+    const slug = path ? `/${path.split('/').reverse()[0]}` : null;
     return (
       <div className="header" style={{ color, background }}>
         <nav className="header-links">
@@ -60,7 +61,7 @@ export default class Header extends Component {
             <Fragment>
               <Link
                 to={`/projects${project.id}`}
-                className={classNames({ "active": path === `/projects${project.id}` })}
+                className={classNames({ "active": slug === `${project.id}` })}
                 style={{ borderBottomColor: color }}
               >
                 {project.title}
