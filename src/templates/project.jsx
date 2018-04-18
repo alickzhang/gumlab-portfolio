@@ -17,7 +17,7 @@ export default class ProjectTemplate extends Component {
     const elements = document.getElementsByClassName('project-content')[0].childNodes;
     elements.forEach(el => {
       /* eslint no-param-reassign: "off" */
-      el.className = "project-section"
+      el.className = "project-section visible"
     });
     this.elements = elements || [];
   }

@@ -8,6 +8,7 @@
   line-height: 3rem;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .header-links {
@@ -32,6 +33,15 @@
   display: inline-block;
 }
 
+.header-logo {
+  height: 40px;
+  width: 40px;
+  display: none;
+  margin-right: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .header-bar {
   display: none;
   background: transparent;
@@ -44,11 +54,15 @@
 
 @media (max-width: 480px) {
   .header {
-    margin-top: 54vh;
+    margin-top: 54vw;
   }
 
   .header-links {
     display: none;
+  }
+
+  .header-logo {
+    display: block;
   }
 
   .header-bar {

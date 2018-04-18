@@ -6,6 +6,8 @@ import classNames from "classnames";
 import Sidebar from "../Sidebar/Sidebar";
 import "./Header.css";
 
+const logoPath = "/logos/logo-header.png";
+
 export default class Header extends Component {
 
   static propTypes = {
@@ -20,26 +22,13 @@ export default class Header extends Component {
   }
 
   state = {
-    isTop: true,
     sidebarOpen: false,
-    path: null
+    path: ''
   }
 
   componentDidMount() {
-    document.addEventListener('scroll', this.onScroll);
     const path = window.location.pathname;
     this.setState({ path });
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('scroll', this.onScroll);
-  }
-
-  onScroll = () => {
-    const isTop = window.scrollY < window.innerHeight;
-    if (isTop !== this.state.isTop) {
-      this.setState({ isTop });
-    }
   }
 
   onSidebarOpen = () => {
@@ -53,14 +42,14 @@ export default class Header extends Component {
   render() {
     const { color, background, project } = this.props;
     const { sidebarOpen, path } = this.state;
-    const slug = path ? `/${path.split('/').reverse()[0]}` : null;
+    const slug = `/${path.split('/').reverse()[0]}`;
     return (
       <div className="header" style={{ color, background }}>
         <nav className="header-links">
           {project &&
             <Fragment>
               <Link
-                to={`/projects${project.id}`}
+                to={path}
                 className={classNames({ "active": slug === `${project.id}` })}
                 style={{ borderBottomColor: color }}
               >
@@ -86,6 +75,7 @@ export default class Header extends Component {
             </Link>
           </div>
         </nav>
+        <Link to="/" className="header-logo" style={{ backgroundImage: `url(${logoPath})` }} />
         <button className="header-bar" style={{ color }} onClick={this.onSidebarOpen}>
           <i className="icons">&#xf008;</i>
         </button>
