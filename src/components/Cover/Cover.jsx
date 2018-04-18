@@ -35,13 +35,14 @@ export default class Cover extends Component {
       ({ sizes } = cover.childImageSharp);
     }
     const coverClass = classNames('cover-img', { fadein, fixed });
+    const showLogo = window.innerWidth > 480 || (window.innerWidth <= 480 && !title);
     return (
       <Fragment>
         <div className="cover">
           <div className="cover-img-container">
             <Img sizes={sizes} fadeIn={fadein} className={coverClass} onLoad={this.props.onLoad} />
           </div>
-          <Link to="/" className="logo" style={{ color: titleColor }}>GUMLAB</Link>
+          {showLogo && <Link to="/" className="logo" style={{ color: titleColor }}>GUMLAB</Link>}
           {title && <div className="cover-title" style={{ color: titleColor }}>{title}</div>}
           <button className="down" onClick={() => scrollYTo(window.innerHeight)} style={{ color: titleColor }}>
             {loading ? <i className="icons loading">&#xf110;</i> : <i className="icons">&#xe800;</i>}

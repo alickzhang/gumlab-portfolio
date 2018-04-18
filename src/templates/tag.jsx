@@ -38,7 +38,7 @@ export default class TagTemplate extends Component {
       <div className="tag-container">
         <Helmet title={`Projects tagged as "${tag}" | ${config.siteTitle}`} />
         <Cover cover={cover} fadein fixed title={`#${tag}`} />
-        <Header />
+        <Header showLogo />
         <ProjectList projectEdges={projectEdges} projectPathPrefix={projectPathPrefix} />
         <Footer config={config} />
         <Cover cover={cover} fixed title={`#${tag}`} />

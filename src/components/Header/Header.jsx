@@ -11,12 +11,14 @@ export default class Header extends Component {
   static propTypes = {
     color: PropTypes.string,
     background: PropTypes.string,
-    project: PropTypes.object
+    project: PropTypes.object,
+    showLogo: PropTypes.bool
   }
 
   static defaultProps = {
     color: 'rgba(0, 0, 0, .75)',
-    background: '#fff'
+    background: '#fff',
+    showLogo: false
   }
 
   state = {
@@ -38,7 +40,7 @@ export default class Header extends Component {
   }
 
   render() {
-    const { color, background, project } = this.props;
+    const { color, background, project, showLogo } = this.props;
     const { sidebarOpen, path } = this.state;
     const slug = `/${path.split('/').reverse()[0]}`;
     return (
@@ -73,7 +75,7 @@ export default class Header extends Component {
             </Link>
           </div>
         </nav>
-        <Link to="/" className="header-logo" style={{ color }}>GUMLAB</Link>
+        {showLogo && <Link to="/" className="header-logo" style={{ color }}>GUMLAB</Link>}
         <button className="header-bar" style={{ color }} onClick={this.onSidebarOpen}>
           <i className="icons">&#xf008;</i>
         </button>

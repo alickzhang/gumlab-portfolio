@@ -54,7 +54,7 @@ export default class ProjectTemplate extends Component {
         </Helmet>
         <SEO projectPath={slug} projectNode={projectNode} projectSEO />
         <Cover cover={cover} fadein fixed title={project.title} titleColor={project.titleColor} />
-        <Header color={project.color} background={project.background} project={project} />
+        <Header color={project.color} background={project.background} project={project} showLogo />
         <div className="project-container" style={{ color: project.color, background: project.background }}>
           <div className="project-content" dangerouslySetInnerHTML={{ __html: projectNode.html }} />
           <div className="project-meta">
