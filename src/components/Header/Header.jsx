@@ -18,6 +18,7 @@ export default class Header extends Component {
   static defaultProps = {
     color: 'rgba(0, 0, 0, .75)',
     background: '#fff',
+    project: null,
     showLogo: false
   }
 
@@ -26,9 +27,11 @@ export default class Header extends Component {
     path: ''
   }
 
-  componentDidMount() {
-    const path = window.location.pathname;
-    this.setState({ path });
+  componentWillMount() {
+    if (typeof window !== 'undefined') {
+      const path = window.location.pathname;
+      this.setState({ path });
+    }
   }
 
   onSidebarOpen = () => {

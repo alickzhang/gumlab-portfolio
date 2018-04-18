@@ -29,7 +29,9 @@ export default class Cover extends Component {
   }
 
   componentWillMount() {
-    this.width = window.innerWidth;
+    if (typeof window !== 'undefined') {
+      this.width = window.innerWidth;
+    }
   }
 
   render() {
