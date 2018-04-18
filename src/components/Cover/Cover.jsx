@@ -28,6 +28,10 @@ export default class Cover extends Component {
     onLoad: () => {}
   }
 
+  componentWillMount() {
+    this.width = window.innerWidth;
+  }
+
   render() {
     const { cover, fadein, fixed, title, titleColor, loading } = this.props;
     let sizes = null;
@@ -35,7 +39,7 @@ export default class Cover extends Component {
       ({ sizes } = cover.childImageSharp);
     }
     const coverClass = classNames('cover-img', { fadein, fixed });
-    const showLogo = window.innerWidth > 480 || (window.innerWidth <= 480 && !title);
+    const showLogo = this.width > 480 || (this.width <= 480 && !title);
     return (
       <Fragment>
         <div className="cover">
