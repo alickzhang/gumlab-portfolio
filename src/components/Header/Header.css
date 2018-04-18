@@ -34,12 +34,9 @@
 }
 
 .header-logo {
-  height: 40px;
-  width: 40px;
   display: none;
   margin-right: auto;
-  background-size: cover;
-  background-repeat: no-repeat;
+  font-family: "Biko";
 }
 
 .header-bar {

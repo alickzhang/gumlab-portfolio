@@ -6,8 +6,6 @@ import classNames from "classnames";
 import Sidebar from "../Sidebar/Sidebar";
 import "./Header.css";
 
-const logoPath = "/logos/logo-header.png";
-
 export default class Header extends Component {
 
   static propTypes = {
@@ -75,7 +73,7 @@ export default class Header extends Component {
             </Link>
           </div>
         </nav>
-        <Link to="/" className="header-logo" style={{ backgroundImage: `url(${logoPath})` }} />
+        <Link to="/" className="header-logo" style={{ color }}>GUMLAB</Link>
         <button className="header-bar" style={{ color }} onClick={this.onSidebarOpen}>
           <i className="icons">&#xf008;</i>
         </button>
