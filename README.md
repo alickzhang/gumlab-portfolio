@@ -50,3 +50,8 @@ Run the following command to build the website for production:
 ```
 gatsby build
 ```
+
+## License
+
+The source code and associated documentation are available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).<br />
+All images are created and owned by GUMLAB under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/). 

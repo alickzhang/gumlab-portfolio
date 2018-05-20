@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "contributors": [
     "Nathan Fang <nathan.fang@icloud.com>",
-    "Alick Zhang"
+    "Alick Zhang <alick369@gmail.com>"
   ],
   "dependencies": {
     "axios": "^0.18.0",
