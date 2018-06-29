@@ -3,7 +3,7 @@ module.exports = {
   siteTitle: "Gumlab Portfolio", // Site title.
   siteTitleAlt: "Gumlab Digital Agency Portfolio", // Alternative site title for SEO.
   siteLogo: "/logos/logo-256.png", // Logo used for SEO and manifest.
-  siteUrl: "https://gumlab-portfolio.netlify.com", // Domain of your website without pathPrefix.
+  siteUrl: "https://gum-lab.com", // Domain of your website without pathPrefix.
   pathPrefix: "/", // Prefixes all links.
   siteDescription: "Portfolio website for Gumlab", // Website description used for RSS feeds/meta description tag.
   siteRss: "/rss.xml", // Path to the RSS file.

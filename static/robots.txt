@@ -2,4 +2,4 @@ User-agent: *
 Disallow: */tags/
 Disallow: */categories/
 
-# sitemap: https://nfang.github.io/portfolio/sitemap.xml
+# sitemap: https://gum-lab.com/sitemap.xml
